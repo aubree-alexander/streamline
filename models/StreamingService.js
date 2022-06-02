@@ -1,5 +1,5 @@
 const { Model } = require('sequelize');
-const sequelize = require('../config/config');
+const sequelize = require('../config/connection.js');
 
 class StreamingService extends Model {}
 
