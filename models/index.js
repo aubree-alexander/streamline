@@ -1,0 +1,1 @@
+//establish associations between models, and foreign keys, and references. 
