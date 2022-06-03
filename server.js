@@ -31,7 +31,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(require('./controllers/'));
+// app.use(require('./controllers/'));
 
 
 sequelize.sync({ force: false }).then(() => {
@@ -39,6 +39,6 @@ sequelize.sync({ force: false }).then(() => {
 });
 
 
-//establish associations between models, and foreign keys, and references. 
-//user model will probably be the same as the mvc project. also look at class activities.
+
+
 //repurpose utils, auth, index.js - they will be similar
