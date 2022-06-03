@@ -5,10 +5,28 @@ class StreamingService extends Model {}
 
 StreamingService.init(
     {
-        title: DataTypes.STRING,
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        movieshow_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                //AA - NOT SURE ON THIS.
+                model: 'movieshow',
+                key: 'id',
+            }
+        }
     },
     {
-        sequelize
+        sequelize,
+        freezeTableName: true
     }
 );
 

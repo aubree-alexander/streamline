@@ -1,11 +1,31 @@
-const { Model } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 
 class MovieShow extends Model {}
 
 MovieShow.init(
     {
-        title: DataTypes.STRING,
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        yearReleased: {
+            type: DataTypes.INTEGER,
+        },
+        streamingservice_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                //AA - NOT SURE ON THIS.
+                model: 'streamingservice',
+                key: 'id',
+            }
+        }
     },
     {
         sequelize
