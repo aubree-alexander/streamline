@@ -21,14 +21,14 @@ MovieShow.init(
         streamingservice_id: {
             type: DataTypes.INTEGER,
             references: {
-                //AA - NOT SURE ON THIS.
-                model: 'streamingservice',
+                model: 'StreamingService',
                 key: 'id',
             }
         }
     },
     {
-        sequelize
+        sequelize,
+        freezeTableName: true
     }
 );
 
