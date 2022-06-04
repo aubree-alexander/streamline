@@ -21,7 +21,7 @@ const streamingservicedata = [
   }
 ];
 
-const seedStreamingService = () => Gallery.bulkCreate(streamingservicedata);
+const seedStreamingService = () => StreamingService.bulkCreate(streamingservicedata);
 
 module.exports = seedStreamingService;
 
