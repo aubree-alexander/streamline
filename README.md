@@ -11,5 +11,3 @@
 
 # Deployed application available here:
 
-
-## API Credits
