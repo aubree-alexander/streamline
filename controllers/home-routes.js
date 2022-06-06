@@ -3,19 +3,19 @@ const { User } = require('../models/');
 
 // get all movies or shows for homepage
 // AA - commenting out for now as I'm not sure how we want to display all of these from the get go on the homepage.
-router.get('/', async (req, res) => {
-  try {
-    const movieShowData = await MovieShow.findAll({
-      include: [User],
-    });
+// router.get('/', async (req, res) => {
+//   try {
+//     const movieShowData = await MovieShow.findAll({
+//       // include: [User],
+//     });
 
-    const movieShows = movieShowData.map((movieShow) => movieShow.get({ plain: true }));
+//     const movieShows = movieShowData.map((movieShow) => movieShow.get({ plain: true }));
 
-    res.render('all-movieShows', { movieShows });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.render('all-movieShows', { movieShows });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 //AA - we need to figure out how to incorporate data from search form to filter results based on what the user searches for.
 // get single movie or show
@@ -43,22 +43,22 @@ router.get('/', async (req, res) => {
 //   }
 // });
 
-router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
+// router.get('/login', (req, res) => {
+//   if (req.session.loggedIn) {
+//     res.redirect('/');
+//     return;
+//   }
 
-  res.render('login');
-});
+//   res.render('login');
+// });
 
-router.get('/signup', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
+// router.get('/signup', (req, res) => {
+//   if (req.session.loggedIn) {
+//     res.redirect('/');
+//     return;
+//   }
 
-  res.render('signup');
-});
+//   res.render('signup');
+// });
 
 module.exports = router;

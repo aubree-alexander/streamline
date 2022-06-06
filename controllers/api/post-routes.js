@@ -4,32 +4,25 @@ const withAuth = require('../../utils/auth');
 
 //post new movie or show
 //AA - we need to link data from new post form here
-// router.post('/', withAuth, async (req, res) => {
-//   const body = req.body;
 
-//   try {
-//     const newMovieShow = await MovieShow.create({ ...body, userId: req.session.userId });
-//     res.json(newMovieShow);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+// **SAM**- worked with Raj...withAuth was looking for a login and preventing Insomnia from working
 
-router.post("/", withAuth, async (req, res) => {
-  MovieShow.findAll({
-      attributes: ["id", "title", "yearReleased"],
-      // include: [{
-      //         model: User,
-      //         attributes: ["username"],
-      //     },
-      // ],
+// Raj advice===what you could try if you want to put withAuth back in is put it back in to the 
+// post route and then hit the login route first with a valid username and password in the JSON and then try hitting the post route
+router.post('/', (req, res) => {
+
+    MovieShow.create({
+      title: req.body.title,
+      yearReleased: req.body.yearReleased,
+    //   user_id: req.session.user_id
     })
-    .then((dbPostData) => res.json(dbPostData))
-    .catch((err) => {
+      .then(dbPostData => res.json(dbPostData))
+      .catch(err => {
         console.log(err);
         res.status(500).json(err);
-    });
-});
+      });
+  });
+
 
 // router.get('/', withAuth, async (req, res) => {
 //   // const body = req.body;
@@ -42,16 +35,16 @@ router.post("/", withAuth, async (req, res) => {
 //   }
 // });
 
-// SAM- linking 'GET' data to 'MovieShow' in models
+// ***SAM- linking MovieShow 'GET' route data to 'StreamingService' in models
 // Get all posts
 router.get("/", async (req, res) => {
   MovieShow.findAll({
       attributes: ["id", "title", "yearReleased",],
-      // include: [{
-      //         model: User,
-      //         attributes: ["username"],
-      //     },
-      // ],
+      include: [{
+              model: StreamingService,
+              attributes: ["id"],
+          },
+      ],
     })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
