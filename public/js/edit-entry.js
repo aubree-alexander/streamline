@@ -1,4 +1,5 @@
 const withAuth = require('../../utils/auth.js');
+//AA - need to tie in withAuth so they can only edit an entry once logged in.
 
 const editEntry = async function(event) {
     event.preventDefault();
