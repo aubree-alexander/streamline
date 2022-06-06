@@ -15,14 +15,19 @@ const withAuth = require('../../utils/auth');
 //   }
 // });
 
-router.post('/', withAuth, (req, res) => {
-  MovieShow.findOne({
-    attributes: ["id", "title", "yearReleased"],
-  })
-    .then(dbPostData => res.json(dbPostData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
+router.post("/", withAuth, async (req, res) => {
+  MovieShow.findAll({
+      attributes: ["id", "title", "yearReleased"],
+      // include: [{
+      //         model: User,
+      //         attributes: ["username"],
+      //     },
+      // ],
+    })
+    .then((dbPostData) => res.json(dbPostData))
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
     });
 });
 
@@ -41,7 +46,7 @@ router.post('/', withAuth, (req, res) => {
 // Get all posts
 router.get("/", async (req, res) => {
   MovieShow.findAll({
-      attributes: ["id", "title", "yearReleased"],
+      attributes: ["id", "title", "yearReleased",],
       // include: [{
       //         model: User,
       //         attributes: ["username"],

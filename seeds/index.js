@@ -1,6 +1,7 @@
 const sequelize = require('../config/connection');
 const seedMovieShow = require('./movieshowData');
 const seedStreamingService = require('./streamingserviceData');
+const seedUser = require('./userData');
 
 const seedAll = async () => {
     await sequelize.sync({ force: true });
@@ -11,6 +12,9 @@ const seedAll = async () => {
 
     await seedStreamingService();
     console.log('\n----- StreamingService SEEDED -----\n');
+
+    await seedUser();
+    console.log('\n----- User SEEDED -----\n');
 
     process.exit(0);
 };
