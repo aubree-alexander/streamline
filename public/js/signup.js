@@ -15,11 +15,19 @@ const signupFormHandler = async function(event) {
     });
 
     if (response.ok) {
-        document.location.replace('/homepage');
+        document.location.replace('/');
     } else {
         alert('Failed to sign up');
     }
 };
 
-//AA - need to update id with what Jenna has
+const existingAccount = function(event) {
+    event.preventDefault();
+
+    document.location.replace('/login');
+}
+
+//AA - need to update id with what Jenna has for both of these event listener
 document.querySelector('#').addEventListener('submit', signupFormHandler);
+
+document.querySelector('#have-account-login').addEventListener('submit', existingAccount)
