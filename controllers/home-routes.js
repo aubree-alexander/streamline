@@ -3,19 +3,19 @@ const { User } = require('../models/');
 
 // get all movies or shows for homepage
 // AA - commenting out for now as I'm not sure how we want to display all of these from the get go on the homepage.
-// router.get('/', async (req, res) => {
-//   try {
-//     const movieShowData = await MovieShow.findAll({
-//       // include: [User],
-//     });
+router.get('/', async (req, res) => {
+  try {
+    const movieShowData = await MovieShow.findAll({
+      // include: [User],
+    });
 
-//     const movieShows = movieShowData.map((movieShow) => movieShow.get({ plain: true }));
+    const movieShows = movieshowData.map((movieShows) => movieShows.get({ plain: true }));
 
-//     res.render('all-movieShows', { movieShows });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+    res.render('all-movieShows', { movieShows });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 //AA - we need to figure out how to incorporate data from search form to filter results based on what the user searches for.
 // get single movie or show

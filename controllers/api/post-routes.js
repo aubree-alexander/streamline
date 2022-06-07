@@ -23,18 +23,6 @@ router.post('/', (req, res) => {
       });
   });
 
-
-// router.get('/', withAuth, async (req, res) => {
-//   // const body = req.body;
-
-//   try {
-//     const newMovieShow = await MovieShow.findAll({ raw: true });
-//     res.json(newMovieShow);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
 // ***SAM- linking MovieShow 'GET' route data to 'StreamingService' in models
 // Get all posts
 router.get("/", async (req, res) => {
