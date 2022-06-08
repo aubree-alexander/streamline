@@ -28,7 +28,7 @@ router.post('/', (req, res) => {
 // Get all posts
 router.get("/", async (req, res) => {
   MovieShow.findAll({
-      attributes: ["id", "title", "yearReleased, image_url",],
+      attributes: ["id", "title", "yearReleased", "image_url",],
       include: [{
               model: StreamingService,
               attributes: ["id"],
@@ -52,7 +52,7 @@ router.get('/search', async (req, res) => {
       where.title = req.query.title.replace(/\+/g, ' ')
     }
     const results = await MovieShow.findAll({
-      where
+      // where
     })
     res.json(results)
   } catch(err) {

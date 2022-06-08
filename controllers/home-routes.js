@@ -4,7 +4,7 @@ const router = require('express').Router();
 const { route } = require('express/lib/application');
 const { User, MovieShow } = require('../models/');
 
-// get all movies or shows for homepage
+// get all movies or shows for homepage carousel
 router.get('/', async (req, res) => {
   try {
     const movieShowData = await MovieShow.findAll({
@@ -33,7 +33,7 @@ router.get('/add-entry', (req, res) => {
   res.render('userEntry');
 });
 
-//send user to homepage when clicking cloudinary main text in nav bar or logo
+// //send user to homepage when clicking cloudinary main text in nav bar or logo
 router.get('/homepage', (req, res) => {
   res.render('homepage');
 });
