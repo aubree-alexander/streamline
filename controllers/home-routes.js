@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../models/');
+const { User, MovieShow } = require('../models/');
 
 // get all movies or shows for homepage
 // AA - commenting out for now as I'm not sure how we want to display all of these from the get go on the homepage.
@@ -8,10 +8,11 @@ router.get('/', async (req, res) => {
     const movieShowData = await MovieShow.findAll({
       // include: [User],
     });
+    console.log(movieShowData);
 
-    const movieShows = movieshowData.map((movieShows) => movieShows.get({ plain: true }));
+    const movieShows = movieShowData.map((movieShows) => movieShows.get({ plain: true }));
 
-    res.render('all-movieShows', { movieShows });
+    res.render('homepage', { movieShows });
   } catch (err) {
     res.status(500).json(err);
   }

@@ -1,0 +1,112 @@
+:root {
+    --lightGray: #D0D6CE;
+    --cadetGray: #A0ADB1;
+    --slateGray: #718494;
+    --bdazzledBlue: #415A77;
+    --oxfordBlue: #1B263B;
+    --richBlack: #0D1B2A;
+    --bodyFont: 'Quicksand', sans-serif;
+}
+
+/* header */
+#navBar {
+    background-color: var(--oxfordBlue);
+    font-family: var(--bodyFont);
+}
+
+.nav-link, .navbar-brand {
+    color: var(--cadetGray);
+}
+
+.nav-link:hover, .navbar-brand:hover {
+    color: var(--slateGray);
+}
+
+.dropdown-menu {
+    background-color: var(--slateGray);
+}
+
+.dropdown-item {
+    color: var(--oxfordBlue);
+    transition-duration: 0.3s;
+}
+
+.dropdown-item:hover {
+    background-color: var(--lightGray);
+    color: var(--oxfordBlue);
+}
+
+.navSearchInput {
+    background-color: var(--lightGray);
+    color: var(--oxfordBlue)
+}
+
+.navSearch {
+    background-color: var(--slateGray);
+    color: var(--oxfordBlue);
+    transition-duration: 0.3s;
+}
+
+.navSearch:hover {
+    background-color: var(--bdazzledBlue);
+    color: var(--lightGray);
+}
+
+/* jumbotron */
+.jumbotron {
+    background-color: var(--bdazzledBlue);
+    color: var(--lightGray);
+    margin-bottom: 20px;
+    font-family: var(--bodyFont);
+}
+
+/* badges */
+#badges {
+    font-family: var(--bodyFont);
+}
+
+.genreBadges, .typeBadges {
+    margin: 0 5px 20px;
+    background-color: var(--oxfordBlue);
+    color: var(--cadetGray);
+    transition-duration: 0.3s;
+}
+
+.genreBadges:hover, .genreBadges:active, .typeBadges:hover, .typeBadges:active {
+    background-color: var(--cadetGray);
+    color: var(--oxfordBlue);
+}
+
+/* carousel cards */
+.carousel {
+    font-family: var(--bodyFont);
+}
+
+/* entry form */
+#userEntryForm, #userProfileGen, #userLogin {
+    font-family: var(--bodyFont);
+}
+
+form, .card {
+    background-color: var(--slateGray);
+}
+
+#mediaTypeDesc, #movieTypeDesc, #tvShowTypeDesc, #ratingDesc {
+    color: var(--oxfordBlue);
+}
+
+#entryTitleForm, #mediaTypeSelect, #movieGenres, #tvShowGenres, #releaseYear, #entryDesc, #ratingSelect, .custom-file-label {
+    color: var(--oxfordBlue);
+}
+
+#entryFormBtn, #accountBtn, #loginBtn {
+    margin: 10px 0;
+    background-color: var(--oxfordBlue);
+    color: var(--lightGray);
+    transition-duration: 0.3s;
+}
+
+#entryFormBtn:hover, #accountBtn:hover, #loginBtn:hover {
+    background-color: var(--lightGray);
+    color: var(--oxfordBlue);
+}
