@@ -22,7 +22,9 @@ router.post('/', (req, res) => {
         res.status(500).json(err);
       });
   });
-
+//could send query params on url and use in where clause by name
+//to access query params, use req.query.whateverparamiscalled
+//can use where clause for genres too. [op.or]. can detect if there's a query param of genres.
 // ***SAM- linking MovieShow 'GET' route data to 'StreamingService' in models
 // Get all posts
 router.get("/", async (req, res) => {
