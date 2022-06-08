@@ -1,16 +1,19 @@
 {
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "cloudinary": "^1.30.0",
     "connect-session-sequelize": "^7.1.4",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-handlebars": "^6.0.6",
     "express-session": "^1.17.3",
+    "formidable": "^2.0.1",
     "mysql2": "^2.3.3",
     "sequelize": "^6.20.1"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "seeds": "node seeds"
   },
   "name": "streamline",
   "description": "",
@@ -25,5 +28,6 @@
   "bugs": {
     "url": "https://github.com/aubree-alexander/streamline/issues"
   },
-  "homepage": "https://github.com/aubree-alexander/streamline#readme"
+  "homepage": "https://github.com/aubree-alexander/streamline#readme",
+  "keywords": []
 }

@@ -5,13 +5,10 @@ const MovieShow = require('./MovieShow');
 const StreamingService = require('./StreamingService');
 
 
-MovieShow.hasMany(StreamingService, {
-    foreignKey: 'streamingservice_id'
+StreamingService.hasOne(MovieShow, {
+    foreignKey: ''
 });
-
-StreamingService.hasMany(MovieShow, {
-    foreignKey: 'movieshow_id'
-});
+MovieShow.belongsTo(StreamingService);
 
 module.exports = { User, MovieShow, StreamingService }
 
