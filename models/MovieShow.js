@@ -24,6 +24,10 @@ MovieShow.init(
                 model: 'StreamingService',
                 key: 'id',
             }
+        },
+        image_url: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     },
     {
