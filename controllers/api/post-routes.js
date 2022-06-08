@@ -2,8 +2,6 @@ const router = require('express').Router();
 const { MovieShow, StreamingService, User } = require('../../models/index.js');
 const withAuth = require('../../utils/auth');
 
-//post new movie or show
-//AA - we need to link data from new post form here
 
 // **SAM**- worked with Raj...withAuth was looking for a login and preventing Insomnia from working
 
@@ -29,7 +27,7 @@ router.post('/', (req, res) => {
 // Get all posts
 router.get("/", async (req, res) => {
   MovieShow.findAll({
-      attributes: ["id", "title", "yearReleased",],
+      attributes: ["id", "title", "yearReleased, image_url",],
       include: [{
               model: StreamingService,
               attributes: ["id"],
@@ -47,25 +45,6 @@ router.get("/", async (req, res) => {
 // router.put('/:id', withAuth, async (req, res) => {
 //   try {
 //     const [affectedRows] = await MovieShow.update(req.body, {
-//       where: {
-//         id: req.params.id,
-//       },
-//     });
-
-//     if (affectedRows > 0) {
-//       res.status(200).end();
-//     } else {
-//       res.status(404).end();
-//     }
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-//AA - keeping this here in case we want to let people delete posts.
-// router.delete('/:id', withAuth, async (req, res) => {
-//   try {
-//     const [affectedRows] = MovieShow.destroy({
 //       where: {
 //         id: req.params.id,
 //       },
