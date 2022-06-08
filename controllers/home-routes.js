@@ -19,13 +19,19 @@ router.get('/', async (req, res) => {
   }
 });
 
-// /search could render template i want. 
 
-//AA - add get route here for navigating nav bar links
-
+//send user to advancedSearch handlebars template when clicking nav button
 router.get('/search', (req, res) => {
   res.render('advancedSearch');
 });
+
+//send user to userEntry handlebars template when clicking nav button
+router.get('/add-entry', (req, res) => {
+  res.render('userEntry');
+});
+
+
+
 
 //AA - we need to figure out how to incorporate data from search form to filter results based on what the user searches for.
 // get single movie or show
