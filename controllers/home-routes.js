@@ -1,3 +1,5 @@
+//responsible for rendering handebars templates.
+
 const router = require('express').Router();
 const { User, MovieShow } = require('../models/');
 
@@ -15,6 +17,14 @@ router.get('/', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+});
+
+// /search could render template i want. 
+
+//AA - add get route here for navigating nav bar links
+
+router.get('/search', (req, res) => {
+  res.render('advancedSearch');
 });
 
 //AA - we need to figure out how to incorporate data from search form to filter results based on what the user searches for.

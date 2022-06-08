@@ -7,11 +7,12 @@ const seedAll = async () => {
     await sequelize.sync({ force: true });
     console.log('\n----- DATABASE SYNCED -----\n');
 
-    await seedMovieShow();
-    console.log('\n----- MovieShow SEEDED -----\n');
+    var streamingServices = await seedStreamingService();
 
-    await seedStreamingService();
     console.log('\n----- StreamingService SEEDED -----\n');
+
+    await seedMovieShow(streamingServices);
+    console.log('\n----- MovieShow SEEDED -----\n');
 
     await seedUser();
     console.log('\n----- User SEEDED -----\n');

@@ -1,3 +1,4 @@
+//change name of this file to movieshow routes
 const router = require('express').Router();
 const { MovieShow, StreamingService, User } = require('../../models/index.js');
 const withAuth = require('../../utils/auth');
@@ -39,6 +40,24 @@ router.get("/", async (req, res) => {
         console.log(err);
         res.status(500).json(err);
     });
+});
+
+
+router.get('/search', async (req, res) => {
+  try {
+    const where = {}
+    console.log(req.query)
+    if (req.query.title) {
+      //in this title, find all space characters, replace pluses with spaces.
+      where.title = req.query.title.replace(/\+/g, ' ')
+    }
+    const results = await MovieShow.findAll({
+      where
+    })
+    res.json(results)
+  } catch(err) {
+    res.status(500).json(err)
+    }
 });
 
 //update existing movie or show
