@@ -48,7 +48,7 @@ router.get('/search', async (req, res) => {
     const where = {}
     console.log(req.query)
     if (req.query.title) {
-      //in this title, find all space characters, replace pluses with spaces.
+      //in this movie title, find all space characters, replace pluses with spaces.
       where.title = req.query.title.replace(/\+/g, ' ')
     }
     const results = await MovieShow.findAll({
@@ -59,6 +59,8 @@ router.get('/search', async (req, res) => {
     res.status(500).json(err)
     }
 });
+
+//just send ONE genre! 
 
 //update existing movie or show
 // router.put('/:id', withAuth, async (req, res) => {
