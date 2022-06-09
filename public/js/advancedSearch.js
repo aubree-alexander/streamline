@@ -32,4 +32,13 @@ const advancedSearch = async function(event) {
 };
 
 
-document.querySelector('#searchForm').addEventListener('submit', advancedSearch)
+document.querySelector('#searchForm').addEventListener('submit', advancedSearch);
+
+/* $('#datepicker').datepicker();
+
+$('#datepicker').datepicker({
+    format: 'yyyy',
+    startView: 'years',
+    minViewMode: 'years',
+    autoclose: true
+}); */
