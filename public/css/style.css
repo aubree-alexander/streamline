@@ -110,3 +110,20 @@ form, .card {
     background-color: var(--lightGray);
     color: var(--oxfordBlue);
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: var(--oxfordBlue);
+}
+
+#ghLink {
+    color: var(--cadetGray);
+    display: flex;
+    justify-content: right;
+    position: fixed;
+    bottom: 15px;
+}
