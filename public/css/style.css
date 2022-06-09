@@ -14,6 +14,14 @@
     font-family: var(--bodyFont);
 }
 
+#navTitle {
+    font-size: 30px;
+}
+
+nav div ul li {
+    font-size: 18px;
+}
+
 .nav-link, .navbar-brand {
     color: var(--cadetGray);
 }
@@ -83,6 +91,18 @@
 }
 
 /* entry form */
+#userEntryForm {
+    margin-top: 40px;
+}
+
+#userEntryP {
+    font-size: 30px;
+}
+
+#entryTitleForm, #mediaTypeDesc, #strServices, #image_url, #releaseYear {
+    font-size: 18px;
+}
+
 #userEntryForm, #userProfileGen, #userLogin {
     font-family: var(--bodyFont);
 }
@@ -99,18 +119,27 @@ form, .card {
     color: var(--oxfordBlue);
 }
 
-#entryFormBtn, #accountBtn, #loginBtn {
+#entryFormBtn, #accountBtn, #loginBtn, #upload_widget {
     margin: 10px 0;
     background-color: var(--oxfordBlue);
     color: var(--lightGray);
     transition-duration: 0.3s;
+    border: none;
+    box-shadow: none;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
 }
 
-#entryFormBtn:hover, #accountBtn:hover, #loginBtn:hover {
+#entryFormBtn:hover, #accountBtn:hover, #loginBtn:hover, #upload_widget:hover {
     background-color: var(--lightGray);
     color: var(--oxfordBlue);
+    border: none;
+    box-shadow: none;
 }
 
+/*footer*/
 footer {
     position: fixed;
     bottom: 0;
