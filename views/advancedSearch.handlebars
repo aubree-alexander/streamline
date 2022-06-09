@@ -1,72 +1,72 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="card col-10">
-            <form>
+            <form id="searchForm">
                 <!--type-->
-                <div class="form-group">
+                {{!-- <div class="form-group">
                     <label for="advSearchType">search by type</label>
                     <select class="form-control" id="advSearchType">
-                        <option>movie</option>
-                        <option>tv show</option>
+                        <option value="movie">movie</option>
+                        <option value="tv show">tv show</option>
                     </select>
-                </div>
+                </div> --}}
 
                 <!--streaming services-->
                 <div class="form-group">
                     <label for="advSearchStr">search by streaming service</label>
-                    <select multiple class="form-control" id="advSearchStr">
-                        <option>AMC+</option>
-                        <option>Apple TV+</option>
-                        <option>BET+</option>
-                        <option>Cruncyroll</option>
-                        <option>DIRECTV STREAM</option>
-                        <option>Discovery+</option>
-                        <option>Disney+</option>
-                        <option>ESPN+</option>
-                        <option>FandangoNOW</option>
-                        <option>HBO Max</option>
-                        <option>HIDIVE</option>
-                        <option>Hulu</option>
-                        <option>Netflix</option>
-                        <option>Noggin</option>
-                        <option>Paramount+</option>
-                        <option>Peacock TV</option>
-                        <option>Pluto TV</option>
-                        <option>Prime Video</option>
-                        <option>Showtime</option>
-                        <option>Shudder</option>
-                        <option>Sling TV</option>
-                        <option>Starz</option>
-                        <option>Sundance Now</option>
-                        <option>Tubi TV</option>
-                        <option>Vudu</option>
+                    <select multiple class="form-control" name="advSearchStr" id="advSearchStr">
+                        <option value="1">AMC+</option>
+                        <option value="2">Apple TV+</option>
+                        <option value="3">BET+</option>
+                        <option value="4">Crunchyroll</option>
+                        <option value="5">DIRECTV STREAM</option>
+                        <option value="6">Discovery+</option>
+                        <option value="7">Disney+</option>
+                        <option value="8">ESPN+</option>
+                        <option value="9">FandangoNOW</option>
+                        <option value="10">HBO Max</option>
+                        <option value="11">HIDIVE</option>
+                        <option value="12">Hulu</option>
+                        <option value="13">Netflix</option>
+                        <option value="14">Noggin</option>
+                        <option value="15">Paramount+</option>
+                        <option value="16">Peacock TV</option>
+                        <option value="17">Pluto TV</option>
+                        <option value="18">Prime Video</option>
+                        <option value="19">Showtime</option>
+                        <option value="20">Shudder</option>
+                        <option value="21">Sling TV</option>
+                        <option value="22">Starz</option>
+                        <option value="23">Sundance Now</option>
+                        <option value="24">Tubi TV</option>
+                        <option value="25">Vudu</option>
                     </select>
                 </div>
 
-                <!-- populates on movie type select
+                <!-- populates on movie type select -->
                 <div class="form-group">
                     <label for="advSearchGenMov">search by genre</label>
                     <select multiple class="form-control" id="advSearchGenMov">
-                        <option>action</option>
-                        <option>animation</option>
-                        <option>biopic</option>
-                        <option>comedy</option>
-                        <option>drama</option>
-                        <option>family</option>
-                        <option>fantasy</option>
-                        <option>horror</option>
-                        <option>musical</option>
-                        <option>romance</option>
-                        <option>science fiction</option>
-                        <option>sports</option>
-                        <option>superhero</option>
-                        <option>thriller</option>
-                        <option>western</option>
-                        <option>war</option>
+                        <option value="action">action</option>
+                        <option value="animation">animation</option>
+                        <option value="biopic">biopic</option>
+                        <option value="comedy">comedy</option>
+                        <option value="drama">drama</option>
+                        <option value="family">family</option>
+                        <option value="fantasy">fantasy</option>
+                        <option value="horror">horror</option>
+                        <option value="musical">musical</option>
+                        <option value="romance">romance</option>
+                        <option value="science fiction">science fiction</option>
+                        <option value="sports">sports</option>
+                        <option value="superhero">superhero</option>
+                        <option value="thriller">thriller</option>
+                        <option value="western">western</option>
+                        <option value="war">war</option>
                     </select>
                 </div>
 
-                populates on tv type select
+                {{!-- populates on tv type select
                 <div class="form-group">
                     <label for="advSearchGenTv">genres</label>
                     <select multiple class="form-control" id="advSearchGenTv">
@@ -93,21 +93,21 @@
                         <option>variety show</option>
                         <option>western</option>
                     </select>
-                </div> -->
+                </div>  --}}
 
                 <!--rating-->
                 <div class=form-group>
                     <label for="advSearchRat">entry rating</label>
                     <select multiple class="form-control" id="advSearchRat">
-                        <option>1 star</option>
-                        <option>1.5 stars</option>
-                        <option>2 stars</option>
-                        <option>2.5 stars</option>
-                        <option>3 stars</option>
-                        <option>3.5 stars</option>
-                        <option>4 stars</option>
-                        <option>4.5 stars</option>
-                        <option>5 stars</option>
+                        <option class="1">1 star</option>
+                        <option class="1.5">1.5 stars</option>
+                        <option class="2">2 stars</option>
+                        <option class="2.5">2.5 stars</option>
+                        <option class="3">3 stars</option>
+                        <option class="3.5">3.5 stars</option>
+                        <option class="4">4 stars</option>
+                        <option class="4.5">4.5 stars</option>
+                        <option class="5">5 stars</option>
                     </select>
                 </div>
 
@@ -123,3 +123,5 @@
         </div>
     </div>
 </div>
+
+<script src="/js/advancedSearch.js"></script>

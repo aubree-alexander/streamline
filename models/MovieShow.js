@@ -32,6 +32,9 @@ MovieShow.init(
         genre: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        rating: {
+            type: DataTypes.INTEGER,
         }
     },
     {
