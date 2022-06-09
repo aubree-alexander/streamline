@@ -115,7 +115,7 @@ form, .card {
     color: var(--oxfordBlue);
 }
 
-#entryTitleForm, #mediaTypeSelect, #movieGenres, #tvShowGenres, #releaseYear, #entryDesc, #ratingSelect, .custom-file-label {
+#entryTitleForm, #mediaTypeSelect, #movieGenres, #tvShowGenres, #releaseYear, #ratingSelect, .custom-file-label {
     color: var(--oxfordBlue);
 }
 
