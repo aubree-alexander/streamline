@@ -91,19 +91,19 @@ nav div ul li {
 }
 
 /* entry form */
-#userEntryForm {
+#userEntryForm, #searchFormContainer {
     margin-top: 40px;
 }
 
-#userEntryP {
+#userEntryP, #searchFormTitle {
     font-size: 30px;
 }
 
-#entryTitleForm, #mediaTypeDesc, #strServices, #image_url, #releaseYear {
+#entryTitleFormLab, #mediaTypeDesc, #strServices, #image_url, #releaseYearLab, #advSearchStrLab, #advSearchGenMovLab, #advSearchRatLab, #advSearchRelLab {
     font-size: 18px;
 }
 
-#userEntryForm, #userProfileGen, #userLogin {
+#userEntryForm, #userProfileGen, #userLogin, #searchFormContainer {
     font-family: var(--bodyFont);
 }
 
@@ -119,7 +119,7 @@ form, .card {
     color: var(--oxfordBlue);
 }
 
-#entryFormBtn, #accountBtn, #loginBtn, #upload_widget {
+#entryFormBtn, #accountBtn, #loginBtn, #upload_widget, #advSearchBtn {
     margin: 10px 0;
     background-color: var(--oxfordBlue);
     color: var(--lightGray);
@@ -132,7 +132,7 @@ form, .card {
     font-size: 18px;
 }
 
-#entryFormBtn:hover, #accountBtn:hover, #loginBtn:hover, #upload_widget:hover {
+#entryFormBtn:hover, #accountBtn:hover, #loginBtn:hover, #upload_widget:hover, #advSearchBtn:hover {
     background-color: var(--lightGray);
     color: var(--oxfordBlue);
     border: none;
@@ -156,3 +156,5 @@ footer {
     position: fixed;
     bottom: 15px;
 }
+
+/*advanced search form*/
