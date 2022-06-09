@@ -90,7 +90,7 @@ nav div ul li {
     font-family: var(--bodyFont);
 }
 
-/* entry form */
+/*forms*/
 #userEntryForm, #searchFormContainer {
     margin-top: 40px;
 }
@@ -99,7 +99,7 @@ nav div ul li {
     font-size: 30px;
 }
 
-#entryTitleFormLab, #mediaTypeDesc, #strServices, #image_url, #releaseYearLab, #advSearchStrLab, #advSearchGenMovLab, #advSearchRatLab, #advSearchRelLab {
+#entryTitleFormLab, #mediaTypeDesc, #strServices, #image_url, #movieTypeDesc, #releaseYearLab, #advSearchStrLab, #advSearchGenMovLab, #advSearchRatLab, #advSearchRelLab {
     font-size: 18px;
 }
 
@@ -156,5 +156,3 @@ footer {
     position: fixed;
     bottom: 15px;
 }
-
-/*advanced search form*/
