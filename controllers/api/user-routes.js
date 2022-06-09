@@ -3,8 +3,8 @@ const { User } = require('../../models');
 
 
 router.get("/", async (req, res) => {
-  User.findAll({
-      attributes: ["id", "username", "password",],
+  MovieShow.findAll({
+      attributes: ["id", "title", "yearReleased",],
       // include: [{
       //         model: User,
       //         attributes: ["username"],
@@ -17,7 +17,6 @@ router.get("/", async (req, res) => {
         res.status(500).json(err);
     });
 });
-
 
 // router.post('/', async (req, res) => {
 //   try {
