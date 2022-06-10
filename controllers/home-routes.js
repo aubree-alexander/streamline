@@ -33,10 +33,27 @@ router.get('/add-entry', (req, res) => {
   res.render('userEntry');
 });
 
-// //send user to homepage when clicking cloudinary main text in nav bar or logo
+//send user to homepage when clicking cloudinary main text in nav bar or logo
 router.get('/homepage', (req, res) => {
   res.render('homepage');
 });
+
+//send user to login page when they click nav bar item
+router.get('/login', (req, res) => {
+  res.render('loginPage');
+});
+
+// MAIN PAGE ROUTES - AA - need to figure out how to add anchor tag to buttons before i implement this.
+
+//send user to advancedSearch handlebars template when clicking search on main page
+// router.get('/search', (req, res) => {
+//   res.render('advancedSearch');
+// });
+
+// //send user to userEntry handlebars template when clicking new entry button on homepage
+// router.get('/add-entry', (req, res) => {
+//   res.render('/userEntry');
+// });
 
 
 
