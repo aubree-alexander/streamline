@@ -1,15 +1,16 @@
-const logout = async function() {
+async function logout() {
     const response = await fetch('/api/user/logout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' }
     });
-
+  
     if (response.ok) {
-        document.location.replace('/homepage');
+      document.location.replace('/');
     } else {
-        alert('Failed to log out.')
+      alert(response.statusText);
     }
-};
-
-//AA - need to make sure id here aligns with what Jenna calls it in the views file.
-document.querySelector('#logout-link').addEventListener('click', logout);
+  }
+  
+//   *** SAM *** make sure '#logout' below is correct
+  document.querySelector('#logout').addEventListener('click', logout);
+  

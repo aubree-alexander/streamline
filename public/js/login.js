@@ -1,24 +1,30 @@
-const loginFormHandler = async function(event) {
+async function loginFormHandler(event) {
     event.preventDefault();
-
-    const usernameEl = document.querySelector('#login-username');
-    const passwordEl = document.querySelector('#login-password');
-
-    const response = await fetch('/api/user/login', {
-        method: 'POST',
+  
+    // *** SAM *** check to make sure these are accurate
+    const username = document.querySelector('#userNameLI').value.trim();
+    const password = document.querySelector('#userPassLI').value.trim();
+  
+    if (username && password) {
+      const response = await fetch('/api/user/login', {
+        method: 'post',
         body: JSON.stringify({
-            username: usernameEl.value,
-            password: passwordEl.value,
+          username,
+          password
         }),
-        headers: { 'Content-Type': 'application/json' },
-    });
-
-    if (response.ok) {
-        document.location.replace('/');
-    } else {
-        alert('Failed to login.');
+        headers: { 'Content-Type': 'application/json' }
+      });
+  
+      if (response.ok) {
+        // *** SAM *** not to 'dashboard' I assume
+        document.location.replace('/dashboard/');
+      } else {
+        alert(response.statusText);
+      }
     }
-};
-
-//AA - we will need to make sure id lines up with what Jenna created in the views folder.
-document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
+  }
+  
+//   ***SAM*** check .login-form below for accuacy
+  document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+  
+  
