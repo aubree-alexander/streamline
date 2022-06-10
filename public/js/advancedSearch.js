@@ -5,9 +5,11 @@ const advancedSearch = async function(event) {
 
     const genre = document.querySelector('#advSearchGenMov').value
 
-    const rating = document.querySelector('#advsearchRat').value
+    const rating = document.querySelector('#advSearchRat').value
 
-    const yearReleased = document.querySelector('#advSearchRel').value
+    const yearReleased = parseInt($('#datepicker').val())
+
+    console.log(yearReleased)
 
     await 
     fetch('/api/movieshows/search', { 
@@ -33,12 +35,3 @@ const advancedSearch = async function(event) {
 
 
 document.querySelector('#searchForm').addEventListener('submit', advancedSearch);
-
-/* $('#datepicker').datepicker();
-
-$('#datepicker').datepicker({
-    format: 'yyyy',
-    startView: 'years',
-    minViewMode: 'years',
-    autoclose: true
-}); */
