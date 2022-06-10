@@ -38,6 +38,12 @@ router.get('/homepage', (req, res) => {
   res.render('homepage');
 });
 
+// //send user to homepage when clicking cloudinary main text in nav bar or logo
+router.get('/my-entries', (req, res) => {
+  res.render('loginPage');
+});
+
+
 
 
 
