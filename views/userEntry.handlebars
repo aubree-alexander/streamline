@@ -11,20 +11,21 @@
                     <input type="title" class="form-control" id="entryTitleForm">
                 </div>
 
+                {{!-- AA - commenting out - future feature --}}
                 <!--type-->
-                <div class="form-group">
+                {{!-- <div class="form-group">
                     <small id="mediaTypeDesc" class="form-text">select a media type for your entry.</small>
                     <label for="mediaTypeSelect">type:</label>
                     <select class="form-control" id="mediaTypeSelect">
                         <option>movie</option>
                         <option>tv show</option>
                     </select>
-                </div>
+                </div> --}}
 
                 <!--streaming services entry is available on-->
                 <div class="form-group">
                     <small id="strServices" class="form-text">select which streaming services your entry is available on.</small>
-                    <label for="strServicesOpt">services</label>
+                    {{!-- <label for="strServicesOpt">services</label> --}}
                     <select multiple class="form-control" id="strServicesOpt">
                         <option>AMC+</option>
                         <option>Apple TV+</option>
@@ -57,14 +58,14 @@
                 {{!-- Cloudinary Widget --}}
                 <div class="form-group">
                     <small id="image_url" class="form-text">upload a movie or show image here:</small>
-                        <input name="upload_img" />
+                        {{!-- <input name="upload_img" /> --}}
                         <button id="upload_widget" class="cloudinary-button" type="button">upload files</button>
                 </div>
 
                 <!--populates on "movie" type select-->
                 <div class="form-group" id="genreContainer">
                     <small id="movieTypeDesc" class="form-text">select a genre.</small>
-                    <label for="movieGenres">genres:</label>
+                    {{!-- <label for="movieGenres">genres:</label> --}}
                     <select multiple class="form-control" id="movieGenres">
                         <option>action</option>
                         <option>animation</option>
@@ -102,16 +103,10 @@
                     </select>
                 </div>
 
-                <!--release year-->
-                <div class="form-group">
-                    <label for="datepicker" id="releaseYearLab">year released:</label>
-                    <input type="number" min="1900" max="2099" step="1" id="datepicker" />
-                </div>
-
                 <!--rating-->
-                {{!-- <div class="form-group">
+                <div class="form-group">
                     <small id="ratingDesc" class="form-text">select a rating for your entry.</small>
-                    <label for="ratingSelect">rating</label>
+                    {{!-- <label for="ratingSelect">rating</label> --}}
                     <select class="form-control" id="ratingSelect">
                         <option>1 star</option>
                         <option>1.5 stars</option>
@@ -123,7 +118,14 @@
                         <option>4.5 stars</option>
                         <option>5 stars</option>
                     </select>
-                </div> --}}
+                </div>
+
+                <!--release year-->
+                <div class="form-group">
+                    <label for="datepicker" id="releaseYearLab">year released:</label>
+                    <input type="number" min="1900" max="2099" step="1" id="datepicker" />
+                </div>
+
 
                 <!--populates based on selected rating-->
                 <div id="ratingStars">
