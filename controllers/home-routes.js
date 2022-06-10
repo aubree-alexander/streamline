@@ -40,6 +40,10 @@ router.get('/homepage', (req, res) => {
 
 //send user to login page when they click nav bar item
 router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/homepage')
+    return;
+  }
   res.render('loginPage');
 });
 
@@ -54,6 +58,15 @@ router.get('/login', (req, res) => {
 // router.get('/add-entry', (req, res) => {
 //   res.render('/userEntry');
 // });
+
+//LOGIN PAGE ROUTES
+router.get('/signup', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/homepage');
+    return;
+  }
+  res.render('accountCreation');
+});
 
 
 

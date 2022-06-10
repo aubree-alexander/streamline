@@ -2,9 +2,9 @@
 const router = require('express').Router();
 const { MovieShow, StreamingService, User } = require('../../models/index.js');
 const withAuth = require('../../utils/auth');
+const { Op } = require("sequelize");
 
-
-// **SAM**- worked with Raj...withAuth was looking for a login and preventing Insomnia from working
+//AA - need to put withAuth back in these once complete.
 
 // Raj advice===what you could try if you want to put withAuth back in is put it back in to the 
 // post route and then hit the login route first with a valid username and password in the JSON and then try hitting the post route
@@ -43,22 +43,30 @@ router.get("/", async (req, res) => {
 });
 
 
+//get route for search form
 router.get('/search', async (req, res) => {
   try {
-    const where = {title, yearReleased, streamingservice_id, genre, rating}
-    if (req.query.title) {
+    const { title, yearReleased, streamingservice_id, genre, rating } = req.body
+    const orArray = []
+    if (title) {
       //in this movie title, find all space characters, replace pluses with spaces.
-      where.title = req.query.title.replace(/\+/g, ' ')
+      orArray.push( { title: title.replace(/\+/g, ' ') })
     }
+    if (yearReleased) {
+      orArray.push({ yearReleased })
+    }
+    if (streamingservice_id) {
+      orArray.push({ streamingservice_id })
+    }
+    if (genre) {
+      orArray.push({ genre })
+    }
+    if (rating) {
+      orArray.push({ rating })
+    }
+
     const results = await MovieShow.findAll({
-      where: {
-        id: req.query.id, 
-        // title: req.query.title,
-        // yearReleased: req.query.yearReleased,
-        // streamingservice_id: req.query.streamingservice_id,
-        // genre: req.query.genre,
-        // rating: req.query.rating
-      }
+      where: { [Op.or]: orArray }
     })
     console.log(results)
     res.json(results)
