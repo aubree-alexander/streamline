@@ -41,8 +41,3 @@ app.use(require('./controllers/'));
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
-
-
-
-
-//repurpose utils, auth, index.js - they will be similar
