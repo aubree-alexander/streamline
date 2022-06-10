@@ -73,18 +73,6 @@ nav div ul li {
     font-family: var(--bodyFont);
 }
 
-.genreBadges, .typeBadges {
-    margin: 0 5px 20px;
-    background-color: var(--oxfordBlue);
-    color: var(--cadetGray);
-    transition-duration: 0.3s;
-}
-
-.genreBadges:hover, .genreBadges:active, .typeBadges:hover, .typeBadges:active {
-    background-color: var(--cadetGray);
-    color: var(--oxfordBlue);
-}
-
 /* carousel cards */
 .carousel {
     font-family: var(--bodyFont);
@@ -132,7 +120,22 @@ form, .card {
     font-size: 18px;
 }
 
-#entryFormBtn:hover, #accountBtn:hover, #loginBtn:hover, #upload_widget:hover, #advSearchBtn:hover {
+#badgesDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.badges {
+    background-color: var(--oxfordBlue);
+    color: var(--lightGray);
+    transition-duration: 0.3s;
+    border: none;
+    box-shadow: none;
+    font-size: 18px;
+    margin: 0px 10px;
+}
+
+.badges:hover, #entryFormBtn:hover, #accountBtn:hover, #loginBtn:hover, #upload_widget:hover, #advSearchBtn:hover {
     background-color: var(--lightGray);
     color: var(--oxfordBlue);
     border: none;

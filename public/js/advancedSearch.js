@@ -9,8 +9,6 @@ const advancedSearch = async function(event) {
 
     const yearReleased = parseInt($('#datepicker').val())
 
-    console.log(yearReleased)
-
     await 
     fetch('/api/movieshows/search', { 
         method: 'GET',
