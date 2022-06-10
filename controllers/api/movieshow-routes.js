@@ -1,7 +1,7 @@
-//change name of this file to movieshow routes
 const router = require('express').Router();
 const { MovieShow, StreamingService, User } = require('../../models/index.js');
 const withAuth = require('../../utils/auth');
+//import model querying from sequelize
 const { Op } = require("sequelize");
 
 //AA - need to put withAuth back in these once complete.
@@ -23,10 +23,9 @@ router.post('/', (req, res) => {
   });
 //could send query params on url and use in where clause by name
 //to access query params, use req.query.whateverparamiscalled
-//can use where clause for genres too. [op.or]. can detect if there's a query param of genres.
 // ***SAM- linking MovieShow 'GET' route data to 'StreamingService' in models
 // Get all posts
-router.get("/", async (req, res) => {
+router.get("/homepage", async (req, res) => {
   MovieShow.findAll({
       attributes: ["id", "title", "yearReleased", "image_url",],
       include: [{
