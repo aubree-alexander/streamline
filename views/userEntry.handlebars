@@ -2,19 +2,19 @@
     <div class="row justify-content-center">
         <div class="card col-10">
             <div id="userEntryTitle">
-                <p id="userEntryP">Add an Entry</p>
+                <p id="userEntryP">add an entry</p>
             </div>
             <form>
                 <!--title-->
                 <div class="form-group">
-                    <label for="entryTitleForm">title</label>
+                    <label for="entryTitleForm" id="entryTitleFormLab">title:</label>
                     <input type="title" class="form-control" id="entryTitleForm">
                 </div>
 
                 <!--type-->
                 <div class="form-group">
                     <small id="mediaTypeDesc" class="form-text">select a media type for your entry.</small>
-                    <label for="mediaTypeSelect">type</label>
+                    <label for="mediaTypeSelect">type:</label>
                     <select class="form-control" id="mediaTypeSelect">
                         <option>movie</option>
                         <option>tv show</option>
@@ -29,7 +29,7 @@
                         <option>AMC+</option>
                         <option>Apple TV+</option>
                         <option>BET+</option>
-                        <option>Cruncyroll</option>
+                        <option>Crunchyroll</option>
                         <option>DIRECTV STREAM</option>
                         <option>Discovery+</option>
                         <option>Disney+</option>
@@ -56,83 +56,57 @@
 
                 {{!-- Cloudinary Widget --}}
                 <div class="form-group">
-                    <small id="image_url" class="form-text">upload a movie or show image here</small>
-                    
+                    <small id="image_url" class="form-text">upload a movie or show image here:</small>
                         <input name="upload_img" />
-                        <button id="upload_widget" class="cloudinary-button" type="button">Upload files</button>
-                    
-
-                 
-
-         
-
+                        <button id="upload_widget" class="cloudinary-button" type="button">upload files</button>
                 </div>
 
-                <!--populates on "movie" type select
-                <div class="form-group">
+                <!--populates on "movie" type select-->
+                <div class="form-group" id="genreContainer">
                     <small id="movieTypeDesc" class="form-text">select a genre.</small>
-                    <label for="movieGenres">genres</label>
+                    <label for="movieGenres">genres:</label>
                     <select multiple class="form-control" id="movieGenres">
                         <option>action</option>
                         <option>animation</option>
+                        <option>anime</option>
                         <option>biopic</option>
+                        <option>cartoon</option>
                         <option>comedy</option>
+                        <option>cooking</option>
+                        <option>courtroom drama</option>
+                        <option>documentary</option>
+                        <option>docuseries</option>
                         <option>drama</option>
+                        <option>educational</option>
                         <option>family</option>
                         <option>fantasy</option>
+                        <option>game show</option>
                         <option>horror</option>
+                        <option>kids</option>
+                        <option>medical drama</option>
                         <option>musical</option>
+                        <option>police procedural</option>
+                        <option>reality</option>
                         <option>romance</option>
+                        <option>romcom</option>
                         <option>science fiction</option>
+                        <option>sitcom</option>
+                        <option>soap</option>
                         <option>sports</option>
                         <option>superhero</option>
+                        <option>telenovela</option>
                         <option>thriller</option>
+                        <option>variety show</option>
                         <option>western</option>
                         <option>war</option>
                     </select>
                 </div>
 
-                populates on "tv show" type select
-                <div class="form-group">
-                    <small id="tvShowTypeDesc" class="form-text">select a genre.</small>
-                    <label for="tvShowGenres">genres</label>
-                    <select multiple class="form-control" id="tvShowGenres">
-                        <option>action</option>
-                        <option>anime</option>
-                        <option>cartoon</option>
-                        <option>children's show</option>
-                        <option>comedy</option>
-                        <option>cooking</option>
-                        <option>courtroom drama</option>
-                        <option>drama</option>
-                        <option>documentary</option>
-                        <option>educational</option>
-                        <option>fantasy</option>
-                        <option>game show</option>
-                        <option>medical drama</option>
-                        <option>police procedural</option>
-                        <option>reality</option>
-                        <option>romance</option>
-                        <option>science fiction</option>
-                        <option>sitcom</option>
-                        <option>superhero</option>
-                        <option>telenovela</option>
-                        <option>variety show</option>
-                        <option>western</option>
-                    </select>
-                </div> -->
-
                 <!--release year-->
                 <div class="form-group">
-                    <label for="releaseYear">year released</label>
-                    <input type="date" class="form-control" id="releaseYear">
+                    <label for="datepicker" id="releaseYearLab">year released:</label>
+                    <input type="text" class="form-control" name="datepicker" id="datepicker">
                 </div>
-
-                <!--description-->
-                {{!-- <div class="form-group">
-                    <label for="entryDesc">description</label>
-                    <input type="text" class="form-control" id="entryDesc">
-                </div> --}}
 
                 <!--rating-->
                 {{!-- <div class="form-group">

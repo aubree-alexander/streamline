@@ -14,6 +14,14 @@
     font-family: var(--bodyFont);
 }
 
+#navTitle {
+    font-size: 30px;
+}
+
+nav div ul li {
+    font-size: 18px;
+}
+
 .nav-link, .navbar-brand {
     color: var(--cadetGray);
 }
@@ -82,8 +90,20 @@
     font-family: var(--bodyFont);
 }
 
-/* entry form */
-#userEntryForm, #userProfileGen, #userLogin {
+/*forms*/
+#userEntryForm, #searchFormContainer {
+    margin-top: 40px;
+}
+
+#userEntryP, #searchFormTitle {
+    font-size: 30px;
+}
+
+#entryTitleFormLab, #mediaTypeDesc, #strServices, #image_url, #movieTypeDesc, #releaseYearLab, #advSearchStrLab, #advSearchGenMovLab, #advSearchRatLab, #advSearchRelLab {
+    font-size: 18px;
+}
+
+#userEntryForm, #userProfileGen, #userLogin, #searchFormContainer {
     font-family: var(--bodyFont);
 }
 
@@ -95,18 +115,44 @@ form, .card {
     color: var(--oxfordBlue);
 }
 
-#entryTitleForm, #mediaTypeSelect, #movieGenres, #tvShowGenres, #releaseYear, #entryDesc, #ratingSelect, .custom-file-label {
+#entryTitleForm, #mediaTypeSelect, #movieGenres, #tvShowGenres, #releaseYear, #ratingSelect, .custom-file-label {
     color: var(--oxfordBlue);
 }
 
-#entryFormBtn, #accountBtn, #loginBtn {
+#entryFormBtn, #accountBtn, #loginBtn, #upload_widget, #advSearchBtn {
     margin: 10px 0;
     background-color: var(--oxfordBlue);
     color: var(--lightGray);
     transition-duration: 0.3s;
+    border: none;
+    box-shadow: none;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
 }
 
-#entryFormBtn:hover, #accountBtn:hover, #loginBtn:hover {
+#entryFormBtn:hover, #accountBtn:hover, #loginBtn:hover, #upload_widget:hover, #advSearchBtn:hover {
     background-color: var(--lightGray);
     color: var(--oxfordBlue);
+    border: none;
+    box-shadow: none;
+}
+
+/*footer*/
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: var(--oxfordBlue);
+}
+
+#ghLink {
+    color: var(--cadetGray);
+    display: flex;
+    justify-content: right;
+    position: fixed;
+    bottom: 15px;
 }
