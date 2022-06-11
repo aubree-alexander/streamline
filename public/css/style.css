@@ -87,7 +87,7 @@ nav div ul li {
     font-size: 30px;
 }
 
-#entryTitleFormLab, #mediaTypeDesc, #strServices, #image_url, #movieTypeDesc, #releaseYearLab, #advSearchStrLab, #advSearchGenMovLab, #advSearchRatLab, #advSearchRelLab, #userNameLILab, #userPassLILab, #signupP, #userNameInputLab, #passWordInputLab {
+#entryTitleFormLab, #mediaTypeDesc, #strServices, #image_url, #movieTypeDesc, #releaseYearLab, #advSearchStrLab, #advSearchGenMovLab, #advSearchRatLab, #advSearchRelLab, #userNameLILab, #userPassLILab, #signupP, #userNameInputLab, #passWordInputLab, #ratingDesc {
     font-size: 18px;
 }
 
