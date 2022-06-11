@@ -1,12 +1,15 @@
 <!--hero-->
 <div class="jumbotron jumbotron-fluid">
-    <div class="container">
+    <div class="container" id="heroTitleDiv">
         <h1 class="display-4">streamline your viewing experience</h1>
-    <p class="lead">take charge of your entertainment.  with streamline, you can quickly see what's available to watch on the streaming services you use without having to flip between applications.  find an old favorite or discover something new using our advanced search.</p>
+        <img src="assets/logoNoBG.png" id="logoImg">
     </div>
-    <div id="badgesDiv">
-        <button type="button" class="btn col-1 badges">search</button>
-        <button type="button" class="btn col-1 badges">add an entry</button>
+    <div class="container">
+        <p class="lead">take charge of your entertainment.  with streamline, you can quickly see what's available to watch on the streaming services you use without having to flip between applications.  find an old favorite or discover something new using our advanced search.</p>
+        <div id="badgesDiv">
+            <button type="button" class="btn badges" id="homeSearchBtn">search</button>
+            <button type="button" class="btn badges" id="homeEntryBtn">add an entry</button>
+        </div>
     </div>
 </div>
 
@@ -37,6 +40,7 @@ badges
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
+
     <!--carousel item 1-->
     <div class="carousel-inner">
     {{#each movieShows}}
@@ -44,6 +48,7 @@ badges
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="card col-8">
+
                         <!--image div goes here-->
                         <img src="{{image_url}}" class="d-block w-100">
                         <div class="card-body">
