@@ -5,7 +5,7 @@ const { route } = require('express/lib/application');
 const { User, MovieShow } = require('../models/');
 
 // get all movies or shows for homepage carousel
-router.get('/', async (req, res) => {
+router.get('/homepage', async (req, res) => {
   try {
     const movieShowData = await MovieShow.findAll({
       // include: [User],
