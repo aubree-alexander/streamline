@@ -68,9 +68,15 @@ nav div ul li {
     font-family: var(--bodyFont);
 }
 
-/* badges */
-#badges {
-    font-family: var(--bodyFont);
+#heroTitleDiv {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100vw;
+}
+
+#logoImg {
+    height:200px;
 }
 
 /* carousel cards */
@@ -107,6 +113,8 @@ form, .card {
     color: var(--oxfordBlue);
 }
 
+
+/*buttons*/
 #entryFormBtn, #accountBtn, #loginBtn, #logoutBtn, #upload_widget, #advSearchBtn, #signupBtn {
     margin: 10px 0;
     background-color: var(--oxfordBlue);
@@ -136,7 +144,11 @@ form, .card {
     color: var(--oxfordBlue);
 }
 
-/* badges 
+/* badges */
+#badges {
+    font-family: var(--bodyFont);
+}
+
 #badgesDiv {
     display: flex;
     justify-content: center;
@@ -157,7 +169,11 @@ form, .card {
     color: var(--oxfordBlue);
     border: none;
     box-shadow: none;
-} */
+} 
+
+#homeSearchBtn, #homeEntryBtn {
+    width: 200px;
+}
 
 /*footer*/
 footer {
