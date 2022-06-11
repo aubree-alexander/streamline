@@ -22,9 +22,17 @@ MovieShow.init(
             type: DataTypes.INTEGER,
             references: {
                 model: 'StreamingService',
-                key: 'id',
-            }
+                key: 'id'
+            },
         },
+        streamingservice_name: {
+            type: DataTypes.STRING,
+            include: {
+                model: 'StreamingService',
+                as: 'streamName'
+            },
+        },
+
         image_url: {
             type: DataTypes.STRING,
             allowNull: false

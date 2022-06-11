@@ -63,16 +63,19 @@ router.get('/search', async (req, res) => {
     if (rating) {
       orArray.push({ rating })
     }
-
+    console.log(orArray)
     const results = await MovieShow.findAll({
-      where: { [Op.or]: orArray }
+      where: {id: { [Op.or]: orArray } }
     })
-    console.log(results)
+    // console.log(results)
     res.json(results)
+    // res.render(results)
   } catch(err) {
     res.status(500).json(err)
     }
 });
+
+
 
 
 //update existing movie or show

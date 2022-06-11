@@ -2,23 +2,34 @@
 
 const router = require('express').Router();
 const { route } = require('express/lib/application');
-const { User, MovieShow } = require('../models/');
+const { User, MovieShow, StreamingService } = require('../models/');
 
 // get all movies or shows for homepage carousel
 router.get('/homepage', async (req, res) => {
-  try {
-    const movieShowData = await MovieShow.findAll({
-      // include: [User],
-    });
-    console.log(movieShowData);
+   
+    // const movieShowData = await 
+    MovieShow.findAll({
 
-    const movieShows = movieShowData.map((movieShows) => movieShows.get({ plain: true }));
+      attributes: [
+        'id', 'title', 'yearReleased', 'streamingservice_id', 'image_url', 'genre', 'rating'
+      ],
+      include: [
+        {
+          model: StreamingService, 
+          attributes: ['name']
+        }
+      ]
+    }).then(data => {
+      const movieShows = data.map((movieShows) => movieShows.get({ plain: true }));
+      res.render('homepage', { movieShows });
+    
+    // console.log(movieShowData);
 
-    res.render('homepage', { movieShows });
-  } catch (err) {
+    console.log('this is the new console log', movieShows)
+  }).catch(err => {
     res.status(500).json(err);
-  }
-});
+})
+})
 
 
 //NAV BAR ROUTES
@@ -71,6 +82,23 @@ router.get('/signup', (req, res) => {
     return;
   }
   res.render('accountCreation');
+});
+
+
+//SEARCH RESULTS ROUTES
+router.get('/searchResults', async (req, res) => {
+  try {
+    const movieShowData = await MovieShow.findAll({
+
+    });
+    console.log(movieShowData);
+
+    const movieShows = movieShowData.map((movieShows) => movieShows.get({ plain: true }));
+
+    res.render('searchResults', { movieShows });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 

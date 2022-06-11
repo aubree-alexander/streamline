@@ -6,7 +6,9 @@ const StreamingService = require('./StreamingService');
 
 
 StreamingService.hasOne(MovieShow, {
-    foreignKey: ''
+    foreignKey: 'id',
+    sourceKey: 'name',
+    as: 'streamName'
 });
 MovieShow.belongsTo(StreamingService);
 

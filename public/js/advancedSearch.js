@@ -1,3 +1,5 @@
+// const { MovieShow } = require("../../models");
+
 const advancedSearch = async function(event) {
     event.preventDefault();
 
@@ -9,27 +11,41 @@ const advancedSearch = async function(event) {
 
     const yearReleased = parseInt($('#datepicker').val())
 
-    await 
-    fetch('/api/movieshows/search', { 
+    await fetch('/api/movieshows/search', { 
         method: 'POST',
-        //AA - ask josh if this is the appropriate method for this! is it a get? could be a post. want to make sure we're passing data back correctly.
         body: JSON.stringify({
             streamingservice_id, genre, rating, yearReleased
         }), 
         headers: {
-            //data that we're grabbing from form that we're holding in teh body - sending back as json object.
+            //data that we're grabbing from form that we're holding in the body - sending back as json object.
             'Content-Type': 'application/json'
         }
+        
 
-        .then(
-            document.location.replace('/searchResults')
-        )
+      
+   //AA - unsure of what to do here.
 
     })
-
-
-    document.location.replace('/advancedSearch')
+    
+        document.location.replace('/searchResults')
+    
 };
+
+//AA - for reference, this is the router.get for the homepage that w
+// router.get('/homepage', async (req, res) => {
+//     try {
+//       const movieShowData = await MovieShow.findAll({
+  
+//       });
+//       console.log(movieShowData);
+  
+//       const movieShows = movieShowData.map((movieShows) => movieShows.get({ plain: true }));
+  
+//       res.render('homepage', { movieShows });
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   });
 
 
 document.querySelector('#searchForm').addEventListener('submit', advancedSearch);
