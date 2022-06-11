@@ -1,28 +1,30 @@
 <div class="container" id="userProfileGen">
     <div class="row justify-content-center">
         <div class="card col-10">
+            <div id="createAccountTitle">
+                <p>create an account</p>
+            </div>
             <form>
-                <!--email-->
-                <!--AA - commenting out email as I can't figure out how to incorporate that + username-->
-                {{!-- <div class="form-group">
+                <!--email
+                AA - commenting out email as I can't figure out how to incorporate that + username
+                <div class="form-group">
                     <label for="userEmail">email address</label>
                     <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp" placeholder="enter email">
-                </div> --}}
+                </div> -->
 
                 <!--username-->
                 <div class="form-group">
-                    <small id="userNameDesc" class="form-text">you will use your username and password to login.</small>
-                    <label for="userNameInput">username</label>
+                    <label for="userNameInput" id="userNameInputLab">username:</label>
                     <input type="username" class="form-control" id="userNameInput" placeholder="enter a unique username.">
                 </div>
 
                 <!--password-->
                 <div class="form-group">
-                    <label for="passWordInput">password</label>
+                    <label for="passWordInput" id="passWordInputLab">password:</label>
                     <input type="password" class="form-control" id="passWordInput" placeholder="create a password.">
-                    <!--AA - commenting this out for now while I get main login functionality to work. Can add this back in later.-->
-                    {{!-- <label for="passWordConfirm">password confirmation</label>
-                    <input type="password" class="form-control" id="passWordConfirm" placeholder="please re-type your password to confirm."> --}}
+                    <!--AA - commenting this out for now while I get main login functionality to work. Can add this back in later.
+                    <label for="passWordConfirm">password confirmation</label>
+                    <input type="password" class="form-control" id="passWordConfirm" placeholder="please re-type your password to confirm."> -->
                 </div>
 
                 <!--submit button-->

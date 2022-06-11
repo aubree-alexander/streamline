@@ -79,15 +79,15 @@ nav div ul li {
 }
 
 /*forms*/
-#userEntryForm, #searchFormContainer, #userLogin {
+#userEntryForm, #searchFormContainer, #userLogin, #userProfileGen {
     margin-top: 40px;
 }
 
-#userEntryP, #searchFormTitle, #loginTitle {
+#userEntryP, #searchFormTitle, #loginTitle, #createAccountTitle {
     font-size: 30px;
 }
 
-#entryTitleFormLab, #mediaTypeDesc, #strServices, #image_url, #movieTypeDesc, #releaseYearLab, #advSearchStrLab, #advSearchGenMovLab, #advSearchRatLab, #advSearchRelLab, #userNameLILab, #userPassLILab, #signupP {
+#entryTitleFormLab, #mediaTypeDesc, #strServices, #image_url, #movieTypeDesc, #releaseYearLab, #advSearchStrLab, #advSearchGenMovLab, #advSearchRatLab, #advSearchRelLab, #userNameLILab, #userPassLILab, #signupP, #userNameInputLab, #passWordInputLab {
     font-size: 18px;
 }
 
