@@ -42,7 +42,7 @@ router.get("/homepage", async (req, res) => {
 });
 
 
-//get route for search form
+//get user input data from search form
 router.get('/search', async (req, res) => {
   try {
     const { title, yearReleased, streamingservice_id, genre, rating } = req.body
