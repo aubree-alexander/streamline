@@ -12,7 +12,7 @@ const movieshowdata= [
   {
     title: 'The Office',
     yearReleased: '2005',
-    image_url: 'https://res.cloudinary.com/ddmkrf5bx123/image/upload/v1654368777/streamline/download_1_qg3ysg.jpg',
+    image_url: 'https://res.cloudinary.com/ddmkrf5bx123/image/upload/v1655070907/streamline/the-office_dnotgj.jpg',
     genre: 'comedy',
     rating: 4.5
   },
@@ -27,7 +27,7 @@ const movieshowdata= [
   {
     title: 'The Dark Knight',
     yearReleased: '2008',
-    image_url: 'https://res.cloudinary.com/ddmkrf5bx123/image/upload/v1654368822/streamline/download_2_pzqmy9.jpg',
+    image_url: 'https://res.cloudinary.com/ddmkrf5bx123/image/upload/v1655070592/streamline/darkknight_zgwaeh.jpg',
     genre: 'action',
     rating: 5
 
