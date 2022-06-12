@@ -15,26 +15,27 @@ router.get('/', (req, res) => {
 
 
 // ***THIS ROUTE DOES NOT WORK IN INSOMNIA AT ALL sam***
+// ***THIS ROUTE WORKS WITHOUT inlude: IN INSOMNIA***
 router.get('/:id', (req, res) => {
   User.findOne({
     attributes: { exclude: ['password'] },
     where: {
       id: req.params.id
     },
-    include: [
-      {
-        model: MovieShow,
-        attributes: ['id', 'title', 'yearReleased', 'created_at']
-      },
-      {
-        model: StreamingService,
-        attributes: ['id', 'name', 'created_at'],
-        include: {
-          model: MovieShow,
-          attributes: ['title']
-        }
-      },
-    ]
+    // include: [
+    //   {
+    //     model: MovieShow,
+    //     attributes: ['id', 'title', 'yearReleased', 'created_at']
+    //   },
+    //   {
+    //     model: StreamingService,
+    //     attributes: ['id', 'name', 'created_at'],
+    //     include: {
+    //       model: MovieShow,
+    //       attributes: ['title']
+    //     }
+    //   },
+    // ]
   })
     .then(dbUserData => {
       if (!dbUserData) {
