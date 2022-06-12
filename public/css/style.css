@@ -195,3 +195,14 @@ footer {
     position: fixed;
     bottom: 15px;
 }
+
+/*results*/
+#results {
+    font-family: var(--bodyFont);
+    color: var(--oxfordBlue);
+    font-size: 18px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
