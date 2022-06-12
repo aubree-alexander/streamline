@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 });
 
 
-// ***THIS ROUTE DOES NOT WORK IN INSOMNIA  sam***
+// ***THIS ROUTE DOES NOT WORK IN INSOMNIA AT ALL sam***
 router.get('/:id', (req, res) => {
   User.findOne({
     attributes: { exclude: ['password'] },
@@ -75,6 +75,7 @@ router.post('/', (req, res) => {
 
 
 // ***THIS ROUTE GIVE A 400 BAD REQUEST ERROR (NO USERNAME) IN INSOMNIA sam***
+// ***OK WEIRD...THIS ROUTE WORKS ON NEWLY CREATED LOGINS, NOT SEEDED DATA sam***
 router.post('/login', (req, res) => {
  
   User.findOne({
