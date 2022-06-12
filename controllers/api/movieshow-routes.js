@@ -69,7 +69,7 @@ router.get('/search', async (req, res) => {
     })
     // console.log(results)
     res.json(results)
-    // res.render(results)
+    // res.render('searchResults')
   } catch(err) {
     res.status(500).json(err)
     }
