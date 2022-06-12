@@ -66,6 +66,7 @@ nav div ul li {
     color: var(--lightGray);
     margin-bottom: 20px;
     font-family: var(--bodyFont);
+    padding: 30px 0px;
 }
 
 #heroTitleDiv {
@@ -135,12 +136,12 @@ form, .card {
     box-shadow: none;
 }
 
-#signupBtnLink {
+#signupBtnLink, #homeSearchLink, #homeEntryLink {
     text-decoration: none;
     color: var(--lightGray);
 }
 
-#signupBtnLink:hover {
+#signupBtnLink:hover, #homeSearchLink:hover, #homeEntryLink:hover {
     color: var(--oxfordBlue);
 }
 
@@ -152,6 +153,8 @@ form, .card {
 #badgesDiv {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    padding: 0px 80px;
 }
 
 .badges {
