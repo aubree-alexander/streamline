@@ -25,13 +25,13 @@ MovieShow.init(
                 key: 'id'
             },
         },
-        streamingservice_name: {
-            type: DataTypes.STRING,
-            include: {
-                model: 'StreamingService',
-                as: 'streamName'
-            },
-        },
+        // streamingservice_name: {
+        //     type: DataTypes.STRING,
+        //     include: {
+        //         model: 'StreamingService',
+        //         as: 'streamName'
+        //     },
+        // },
 
         image_url: {
             type: DataTypes.STRING,

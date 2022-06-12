@@ -3,7 +3,7 @@
 const router = require('express').Router();
 const { route } = require('express/lib/application');
 const { User, MovieShow, StreamingService } = require('../models/');
-
+console.log(StreamingService)
 // get all movies or shows for homepage carousel
 router.get('/homepage', async (req, res) => {
    
@@ -24,6 +24,7 @@ router.get('/homepage', async (req, res) => {
       res.render('homepage', { movieShows });
     
     // console.log(movieShowData);
+
 
     console.log('this is the new console log', movieShows)
   }).catch(err => {
