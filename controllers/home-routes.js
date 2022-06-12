@@ -23,9 +23,6 @@ router.get('/homepage', async (req, res) => {
       const movieShows = data.map((movieShows) => movieShows.get({ plain: true }));
       res.render('homepage', { movieShows });
     
-    // console.log(movieShowData);
-
-
     console.log('this is the new console log', movieShows)
   }).catch(err => {
     res.status(500).json(err);
