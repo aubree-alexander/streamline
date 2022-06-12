@@ -6,8 +6,7 @@ const { Op } = require("sequelize");
 
 //AA - need to put withAuth back in these once complete.
 
-// Raj advice===what you could try if you want to put withAuth back in is put it back in to the 
-// post route and then hit the login route first with a valid username and password in the JSON and then try hitting the post route
+// Raj advice===what you could try if you want to put withAuth back in is put it back in to the post route and then hit the login route first with a valid username and password in the JSON and then try hitting the post route
 router.post('/', (req, res) => {
 
     MovieShow.create({
@@ -21,9 +20,7 @@ router.post('/', (req, res) => {
         res.status(500).json(err);
       });
   });
-//could send query params on url and use in where clause by name
-//to access query params, use req.query.whateverparamiscalled
-// ***SAM- linking MovieShow 'GET' route data to 'StreamingService' in models
+
 // Get all posts
 router.get("/homepage", async (req, res) => {
   MovieShow.findAll({
@@ -83,6 +80,7 @@ router.post('/search', async (req, res) => {
 
 
 
+//AA - this is a feature
 //update existing movie or show
 // router.put('/:id', withAuth, async (req, res) => {
 //   try {

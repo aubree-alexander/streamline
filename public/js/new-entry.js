@@ -1,6 +1,9 @@
-const uploadUrlInput = document.querySelector('[name="upload_url"]')
+const { MovieShow } = require("../../models");
 
+const uploadUrlInput = document.querySelector('[name="upload_url"]')
 const uploadWidgetButton = document.getElementById("upload_widget")
+
+//cloudinary widget
 const myWidget = cloudinary.createUploadWidget({
     cloudName: 'ddmkrf5bx123', 
     uploadPreset: 's4wgstbl'
@@ -15,25 +18,39 @@ const myWidget = cloudinary.createUploadWidget({
 const newEntryHandler = async function(event) {
     event.preventDefault();
 
-    const title = document.querySelector('input[name="post-title"]').value;
-    const body = document.querySelector('textarea[name="post-body"]').value;
+    // const title = document.querySelector('input[name="post-title"]').value;
+    // const body = document.querySelector('textarea[name="post-body"]').value;
+    const title = document.querySelector('#entryTitleFormLab').value
+    const streamingservice_id = document.querySelector('#strServicesOpt').value
+    const genre = document.querySelector('#movieGenres').value
+    const rating = document.querySelector('#ratingSelect').value
+    const yearReleased = parseInt($('#releaseYearLab').val())
 
-    await fetch(`/api/post`, {
-        method: 'POST',
-        body: JSON.stringify({
-            title, 
-            body,
-        }),
-        headers: { 'Content-Type': 'application/json' },
+    const newMovieShow = await MovieShow.create({
+        title: title,
+        yearReleased: yearReleased,
+        genre: genre,
+        rating: rating,
+        //aa - is this right?
+        streamingservice_id: streamingservice_id,
+        //aa - how to go about this / getting url from cloudinary?
+        image_url: 
     })
-
-    document.location.replace('/homepage');
+    // await fetch(`/api/post`, {
+    //     method: 'POST',
+    //     body: JSON.stringify({
+    //         title, 
+    //         body,
+    //     }),
+    //     headers: { 'Content-Type': 'application/json' },
+    // })
 
 };
 
+//event listener for cloudinary widget
 uploadWidgetButton.addEventListener('click', function(){
 myWidget.open();
 }, false);
 
-//AA - make sure id lines up with what Jenna has
-document.querySelector('#new-post-form').addEventListener('submit', newEntryHandler);
+
+document.querySelector('#newPostForm').addEventListener('submit', newEntryHandler);
