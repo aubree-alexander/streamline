@@ -1,13 +1,37 @@
-# Streamline
+# streamline
 
-* This is for Project 2 for UW Extensions Coding Bootcamp.
-* It is a website that allows the end user to search for a movie or TV show, whether that be by name or by genre, and see what streaming services the movie or TV show is available on all in one place. No more searching through 5 different streaming service apps to find the show you want to watch! 
-* This website is croudsourced. If users don't find a movie or TV show on the app, they can create an account/login and either add a new entry, or edit an existing entry if it is not accurate.
-* Images are able to be stored in the database due to the use of Cloudinary.
+// insert picture here
+// insert link to deployed application here
 
- # Sample of Deployed Application
+#### Development
 
+_streamline_ was developed with today's entertainment consumers in mind.  out of a desire to improve the modern entertainment experience, _streamline_ was developed to create an all-in-one site where consumers can view shows and movies available across multiple streaming services.  as the world moves away from cable and physical media, _streamline_ seeks to be rid of the antiquated practice of channel surfing and creates a space where Users can search for entertainment from all the services they subscribe to.
 
+#### Usage
 
-# Deployed application available here:
+_streamline_ is a community-maintained database that allows Users to submit entries for their favorite shows and movies, assigning them to the services they are available on along with genres, ratings, and release year.  Users can search the database using multiple paramaters to find media that interests them, as well as what other Users think about it.
 
+#### Features
+
+* Croudsourced
+* Image uploads
+* Account creation
+* Extensive lists of services and genres
+
+#### Technologies used
+
+* MySQL
+* Sequelize
+* Node.js
+* Bootstrap
+* Handlebars
+* Cloudinary
+* jQuery
+* Google Fonts
+
+#### Creators
+* Aubree Alexander - [GitHub](https://github.com/aubree-alexander)
+* Jenna Anderson - [GitHub](https://github.com/jennaanderson00)
+* Scott McKellips - [GitHub](https://github.com/smckelli)
+
+_streamline_ was created for Project 2 of the UW Extensions Coding Bootcamp.
