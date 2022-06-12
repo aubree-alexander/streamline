@@ -67,7 +67,13 @@ router.post('/search', async (req, res) => {
     }
     console.log(orArray)
     const results = await MovieShow.findAll({
-      where: { [Op.or]: orArray } 
+      where: { [Op.or]: orArray },
+      include: [
+        {
+          model: StreamingService,
+          attributes: ['name']
+        }
+      ]
     })
     // console.log(results)
     res.json(results)
@@ -76,8 +82,6 @@ router.post('/search', async (req, res) => {
     res.status(500).json(err)
     }
 });
-
-
 
 
 //AA - this is a feature

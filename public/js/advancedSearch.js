@@ -32,12 +32,11 @@ const advancedSearch = async function(event) {
                     <p class="card-text">${movieShow.yearReleased}</p>
                     <p class="card-text">genre: ${movieShow.genre}</p>
                     <p class="card-text">rating: ${movieShow.rating} stars</p>
-                   
+                    <p class="card-text">${movieShow.StreamingService.name}</p>
                 </div>
             </div>`
         })
     })
 };
-{/* <p class="card-text">${movieShow.StreamingService.name}</p> */}
 
 document.querySelector('#searchForm').addEventListener('submit', advancedSearch);
