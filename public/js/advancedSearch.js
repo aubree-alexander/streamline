@@ -37,31 +37,15 @@ const advancedSearch = async function(event) {
         searchResults.forEach(movieShow => {
             //AA - how to insert image url from database here? not from form
         resultsDiv.innerHTML += `<div class="card" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="` + title + `">
+                <img src="${movieShow.image_url}" class="card-img-top" alt=" ">
                 <div class="card-body">
-                    <p class="card-text">` + yearReleased + `</p>
-                    <p class="card-text">` + genre + `</p>
+                    <p class="card-text">${movieShow.title}</p>
+                    <p class="card-text"></p>
                 </div>
             </div>`
         })
     })
 };
-
-//AA - for reference, this is the router.get for the homepage that w
-// router.get('/homepage', async (req, res) => {
-//     try {
-//       const movieShowData = await MovieShow.findAll({
-  
-//       });
-//       console.log(movieShowData);
-  
-//       const movieShows = movieShowData.map((movieShows) => movieShows.get({ plain: true }));
-  
-//       res.render('homepage', { movieShows });
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-//   });
 
 
 document.querySelector('#searchForm').addEventListener('submit', advancedSearch);
