@@ -50,7 +50,8 @@ router.get('/:id', (req, res) => {
 });
 
 
-// ***THIS ROUTE GIVES A SEQUELIZE VALIDATION ERROR IN INSOMNIA sam***
+// (***THIS ROUTE GIVES A SEQUELIZE VALIDATION ERROR IN INSOMNIA sam***)
+// ****THIS ROUTE WORKS NOW...CHANGED PWD LENGTH (len) IN USER MODELS to [8,15] sam****
 router.post('/', (req, res) => {
  
   User.create({
