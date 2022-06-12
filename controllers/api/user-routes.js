@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User, MovieShow, StreamingService } = require('../../models');
 
-// get all users
+// get all users   ***THIS ROUTE WORKS IN INSOMNIA sam***
 router.get('/', (req, res) => {
   User.findAll({
     attributes: { exclude: ['password'] }
@@ -13,26 +13,29 @@ router.get('/', (req, res) => {
     });
 });
 
+
+// ***THIS ROUTE DOES NOT WORK IN INSOMNIA AT ALL sam***
+// ***THIS ROUTE WORKS WITHOUT inlude: IN INSOMNIA***
 router.get('/:id', (req, res) => {
   User.findOne({
     attributes: { exclude: ['password'] },
     where: {
       id: req.params.id
     },
-    include: [
-      {
-        model: MovieShow,
-        attributes: ['id', 'title', 'yearReleased', 'created_at']
-      },
-      {
-        model: StreamingService,
-        attributes: ['id', 'name', 'created_at'],
-        include: {
-          model: MovieShow,
-          attributes: ['title']
-        }
-      },
-    ]
+    // include: [
+      // {
+      //   model: MovieShow,
+      //   attributes: ['id', 'title', 'yearReleased', 'created_at']
+      // },
+    //   {
+    //     model: StreamingService,
+    //     attributes: ['id', 'name', 'created_at'],
+    //     include: {
+    //       model: MovieShow,
+    //       attributes: ['title']
+    //     }
+    //   },
+    // ]
   })
     .then(dbUserData => {
       if (!dbUserData) {
@@ -47,6 +50,9 @@ router.get('/:id', (req, res) => {
     });
 });
 
+
+// (***THIS ROUTE GIVES A SEQUELIZE VALIDATION ERROR IN INSOMNIA sam***)
+// ****THIS ROUTE WORKS NOW...CHANGED PWD LENGTH (len) IN USER MODELS to [8,15] sam****
 router.post('/', (req, res) => {
  
   User.create({
@@ -68,6 +74,9 @@ router.post('/', (req, res) => {
     });
 });
 
+
+// ***THIS ROUTE GIVE A 400 BAD REQUEST ERROR (NO USERNAME) IN INSOMNIA sam***
+// ***OK WEIRD...THIS ROUTE WORKS ON NEWLY CREATED LOGINS, NOT SEEDED DATA sam***
 router.post('/login', (req, res) => {
  
   User.findOne({
@@ -92,15 +101,18 @@ router.post('/login', (req, res) => {
       req.session.username = dbUserData.username;
       req.session.loggedIn = true;
   
-      res.json({ user: dbUserData, message: 'You are now logged in!' });
+      // 
+      res.redirect('/homepage')
     });
   });
 });
 
+
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
-      res.status(204).end();
+      // res.status(204).end();
+      res.redirect('/homepage')
     });
   }
   else {

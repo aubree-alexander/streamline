@@ -1,16 +1,27 @@
 <div class="container" id="userLogin">
     <div class="row justify-content-center">
         <div class="card col-10">
+            <div id="loginTitle">
+                <p>login</p>
+            </div>
+            <div id="signupSection">
+                <p id="signupP">don't have an account with us?</p>
+                
+                <!--signup button-->
+                <button type="submit" class="btn" id="signupBtn">
+                    <a href="/signup" id="signupBtnLink">sign up</a>
+                </button>
+            </div>
             <form>
                 <!--username-->
                 <div class="form-group">
-                    <label for="userNameLI">username</label>
+                    <label for="userNameLI" id="userNameLILab">username:</label>
                     <input type="username" class="form-control" id="userNameLI">
                 </div>
 
                 <!--password-->
                 <div class="form-group">
-                    <label for="userPassLI">password</label>
+                    <label for="userPassLI" id="userPassLILab">password:</label>
                     <input type="password" class="form-control" id="userPassLI">
                 </div>
 
@@ -18,12 +29,10 @@
                 <button type="submit" class="btn" id="loginBtn">login</button>
 
                 <!--logout button-->
-                <button type="submit" class="btn" id="loginBtn">logout</button>
-
-                <!--signup button-->
-                {{!-- <button type="submit" class="btn" id="signupBtn">sign up</button> --}}
-                <a href="/signup">sign up</a>
+                <button type="submit" class="btn" id="logoutBtn">logout</button>
             </form>
         </div>
     </div>
 </div>
+
+<script src="/js/login.js"></script>

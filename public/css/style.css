@@ -68,9 +68,15 @@ nav div ul li {
     font-family: var(--bodyFont);
 }
 
-/* badges */
-#badges {
-    font-family: var(--bodyFont);
+#heroTitleDiv {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100vw;
+}
+
+#logoImg {
+    height:200px;
 }
 
 /* carousel cards */
@@ -79,15 +85,15 @@ nav div ul li {
 }
 
 /*forms*/
-#userEntryForm, #searchFormContainer {
+#userEntryForm, #searchFormContainer, #userLogin, #userProfileGen {
     margin-top: 40px;
 }
 
-#userEntryP, #searchFormTitle {
+#userEntryP, #searchFormTitle, #loginTitle, #createAccountTitle {
     font-size: 30px;
 }
 
-#entryTitleFormLab, #mediaTypeDesc, #strServices, #image_url, #movieTypeDesc, #releaseYearLab, #advSearchStrLab, #advSearchGenMovLab, #advSearchRatLab, #advSearchRelLab {
+#entryTitleFormLab, #mediaTypeDesc, #strServices, #image_url, #movieTypeDesc, #releaseYearLab, #advSearchStrLab, #advSearchGenMovLab, #advSearchRatLab, #advSearchRelLab, #userNameLILab, #userPassLILab, #signupP, #userNameInputLab, #passWordInputLab, #ratingDesc {
     font-size: 18px;
 }
 
@@ -107,17 +113,40 @@ form, .card {
     color: var(--oxfordBlue);
 }
 
-#entryFormBtn, #accountBtn, #loginBtn, #upload_widget, #advSearchBtn {
+
+/*buttons*/
+#entryFormBtn, #accountBtn, #loginBtn, #logoutBtn, #upload_widget, #advSearchBtn, #signupBtn {
     margin: 10px 0;
     background-color: var(--oxfordBlue);
     color: var(--lightGray);
     transition-duration: 0.3s;
     border: none;
     box-shadow: none;
-    height: 20px;
+    height: 25px;
     display: flex;
     align-items: center;
     font-size: 18px;
+}
+
+#entryFormBtn:hover, #accountBtn:hover, #loginBtn:hover, #logoutBtn:hover, #upload_widget:hover, #advSearchBtn:hover, #signupBtn:hover {
+    background-color: var(--lightGray);
+    color: var(--oxfordBlue);
+    border: none;
+    box-shadow: none;
+}
+
+#signupBtnLink {
+    text-decoration: none;
+    color: var(--lightGray);
+}
+
+#signupBtnLink:hover {
+    color: var(--oxfordBlue);
+}
+
+/* badges */
+#badges {
+    font-family: var(--bodyFont);
 }
 
 #badgesDiv {
@@ -135,11 +164,15 @@ form, .card {
     margin: 0px 10px;
 }
 
-.badges:hover, #entryFormBtn:hover, #accountBtn:hover, #loginBtn:hover, #upload_widget:hover, #advSearchBtn:hover {
+.badges:hover {
     background-color: var(--lightGray);
     color: var(--oxfordBlue);
     border: none;
     box-shadow: none;
+} 
+
+#homeSearchBtn, #homeEntryBtn {
+    width: 200px;
 }
 
 /*footer*/
