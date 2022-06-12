@@ -43,7 +43,7 @@ router.get("/homepage", async (req, res) => {
 
 
 //get user input data from search form
-router.get('/search', async (req, res) => {
+router.post('/search', async (req, res) => {
   try {
     const { title, yearReleased, streamingservice_id, genre, rating } = req.body
     const orArray = []
@@ -51,21 +51,26 @@ router.get('/search', async (req, res) => {
       //in this movie title, find all space characters, replace pluses with spaces.
       orArray.push( { title: title.replace(/\+/g, ' ') })
     }
-    if (yearReleased) {
+    //2 !! means - does it exist and is a truthy value (not an empty string?)
+    //also called BANG
+    if (!!title) {
+      orArray.push({ title })
+    }
+    if (!!yearReleased) {
       orArray.push({ yearReleased })
     }
-    if (streamingservice_id) {
+    if (!!streamingservice_id) {
       orArray.push({ streamingservice_id })
     }
-    if (genre) {
+    if (!!genre) {
       orArray.push({ genre })
     }
-    if (rating) {
+    if (!!rating) {
       orArray.push({ rating })
     }
     console.log(orArray)
     const results = await MovieShow.findAll({
-      where: {id: { [Op.or]: orArray } }
+      where: { [Op.or]: orArray } 
     })
     // console.log(results)
     res.json(results)

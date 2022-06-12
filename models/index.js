@@ -14,7 +14,10 @@ StreamingService.hasMany(MovieShow, {
 });
 
 
-MovieShow.belongsTo(StreamingService);
+MovieShow.belongsTo(StreamingService, {
+    foreignKey: 'streamingservice_id'
+});
+
 
 module.exports = { User, MovieShow, StreamingService }
 

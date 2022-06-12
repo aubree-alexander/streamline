@@ -1,7 +1,10 @@
 // const { MovieShow } = require("../../models");
+const resultsDiv = document.getElementById('results')
 
 const advancedSearch = async function(event) {
     event.preventDefault();
+
+    const title = document.querySelector('#movieTitle').value
 
     const streamingservice_id = document.querySelector('#advSearchStr').value
 
@@ -11,10 +14,13 @@ const advancedSearch = async function(event) {
 
     const yearReleased = parseInt($('#datepicker').val())
 
-    await fetch('/api/movieshows/search', { 
+   
+
+
+    fetch('/api/movieshows/search', { 
         method: 'POST',
         body: JSON.stringify({
-            streamingservice_id, genre, rating, yearReleased
+            title, streamingservice_id, genre, rating, yearReleased 
         }), 
         headers: {
             //data that we're grabbing from form that we're holding in the body - sending back as json object.
@@ -22,13 +28,23 @@ const advancedSearch = async function(event) {
         }
         
 
-      
-   //AA - unsure of what to do here.
 
+
+    }).then(response => response.json())
+    .then(searchResults => {
+        resultsDiv.innerHTML = ''
+
+        searchResults.forEach(movieShow => {
+            //AA - how to insert image url from database here? not from form
+        resultsDiv.innerHTML += `<div class="card" style="width: 18rem;">
+                <img src="" class="card-img-top" alt="` + title + `">
+                <div class="card-body">
+                    <p class="card-text">` + yearReleased + `</p>
+                    <p class="card-text">` + genre + `</p>
+                </div>
+            </div>`
+        })
     })
-    
-        document.location.replace('/searchResults')
-    
 };
 
 //AA - for reference, this is the router.get for the homepage that w
