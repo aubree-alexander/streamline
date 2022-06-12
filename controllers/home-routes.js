@@ -14,7 +14,7 @@ router.get('/homepage', async (req, res) => {
 
     const movieShows = movieShowData.map((movieShows) => movieShows.get({ plain: true }));
 
-    res.render('homepage', { movieShows });
+    res.render('homepage', { movieShows, loggedIn: req.session.loggedIn });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -25,23 +25,23 @@ router.get('/homepage', async (req, res) => {
 
 //send user to advancedSearch handlebars template when clicking nav button
 router.get('/search', (req, res) => {
-  res.render('advancedSearch');
+  res.render('advancedSearch', {loggedIn: req.session.loggedIn});
 });
 
 //send user to userEntry handlebars template when clicking nav button
 router.get('/add-entry', (req, res) => {
-  res.render('userEntry');
+  res.render('userEntry',{loggedIn: req.session.loggedIn});
 });
 
 //send user to homepage when clicking cloudinary main text in nav bar or logo
 router.get('/homepage', (req, res) => {
-  res.render('homepage');
+  res.render('homepage',{loggedIn: req.session.loggedIn});
 });
 
 // //send user to homepage when clicking cloudinary main text in nav bar or logo
-router.get('/my-entries', (req, res) => {
-  res.render('loginPage');
-});
+// router.get('/my-entries', (req, res) => {
+//   res.render('loginPage');
+// });
 
 //send user to login page when they click nav bar item
 router.get('/login', (req, res) => {
@@ -49,7 +49,7 @@ router.get('/login', (req, res) => {
     res.redirect('/homepage')
     return;
   }
-  res.render('loginPage');
+  res.render('loginPage', {loggedIn: req.session.loggedIn});
 });
 
 // MAIN PAGE ROUTES - AA - need to figure out how to add anchor tag to buttons before i implement this.
@@ -70,7 +70,7 @@ router.get('/signup', (req, res) => {
     res.redirect('/homepage');
     return;
   }
-  res.render('accountCreation');
+  res.render('accountCreation',{loggedIn: req.session.loggedIn});
 });
 
 

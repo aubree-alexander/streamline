@@ -23,10 +23,10 @@ router.get('/:id', (req, res) => {
       id: req.params.id
     },
     // include: [
-    //   {
-    //     model: MovieShow,
-    //     attributes: ['id', 'title', 'yearReleased', 'created_at']
-    //   },
+      // {
+      //   model: MovieShow,
+      //   attributes: ['id', 'title', 'yearReleased', 'created_at']
+      // },
     //   {
     //     model: StreamingService,
     //     attributes: ['id', 'name', 'created_at'],
@@ -101,7 +101,8 @@ router.post('/login', (req, res) => {
       req.session.username = dbUserData.username;
       req.session.loggedIn = true;
   
-      res.json({ user: dbUserData, message: 'You are now logged in!' });
+      // 
+      res.redirect('/homepage')
     });
   });
 });
@@ -110,7 +111,8 @@ router.post('/login', (req, res) => {
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
-      res.status(204).end();
+      // res.status(204).end();
+      res.redirect('/homepage')
     });
   }
   else {
