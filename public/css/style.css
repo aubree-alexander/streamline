@@ -81,8 +81,17 @@ nav div ul li {
 }
 
 /* carousel cards */
+.carousel-item {
+    color: var(--oxfordBlue);
+}
+
 .carousel {
     font-family: var(--bodyFont);
+}
+
+#carouselImg {
+    height: 450px;
+    margin-top: 40px;
 }
 
 /*forms*/
@@ -90,11 +99,11 @@ nav div ul li {
     margin-top: 40px;
 }
 
-#userEntryP, #searchFormTitle, #loginTitle, #createAccountTitle {
+#userEntryP, #searchFormTitle, #loginTitle, #createAccountTitle, .carouselTitles {
     font-size: 30px;
 }
 
-#entryTitleFormLab, #mediaTypeDesc, #strServices, #image_url, #movieTypeDesc, #releaseYearLab, #advSearchStrLab, #advSearchGenMovLab, #advSearchRatLab, #advSearchRelLab, #userNameLILab, #userPassLILab, #signupP, #userNameInputLab, #passWordInputLab, #ratingDesc {
+#entryTitleFormLab, #mediaTypeDesc, #strServices, #image_url, #movieTypeDesc, #releaseYearLab, #advSearchStrLab, #advSearchGenMovLab, #advSearchRatLab, #advSearchRelLab, #userNameLILab, #userPassLILab, #signupP, #userNameInputLab, #passWordInputLab, #ratingDesc, .carouselYear, .carouselService {
     font-size: 18px;
 }
 
