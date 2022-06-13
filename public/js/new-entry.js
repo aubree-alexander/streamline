@@ -1,4 +1,4 @@
-const { MovieShow } = require("../../models");
+const { MovieShow } = require("../../models/index");
 
 const uploadUrlInput = document.querySelector('[name="upload_url"]')
 const uploadWidgetButton = document.getElementById("upload_widget")
@@ -50,6 +50,7 @@ const newEntryHandler = async function(event) {
 
 //event listener for cloudinary widget
 uploadWidgetButton.addEventListener('click', function(){
+    console.log('clicked')
 myWidget.open();
 }, false);
 

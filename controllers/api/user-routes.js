@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, MovieShow, StreamingService } = require('../../models');
+const withAuth = require('../../utils/auth')
 
 // get all users   ***THIS ROUTE WORKS IN INSOMNIA sam***
 router.get('/', withAuth, (req, res) => {
