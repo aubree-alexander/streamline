@@ -1,3 +1,5 @@
+const newEntryDiv = document.getElementById('newEntryResult')
+
 let uploadUrlInput;
 const uploadWidgetButton = document.getElementById("upload_widget")
 console.log(uploadUrlInput)
@@ -37,9 +39,25 @@ const newEntryHandler = async function(event) {
 
         }),
         headers: { 'Content-Type': 'application/json' },
+    }).then(response => response.json())
+    .then(newEntry => {
+        newEntryDiv.innerHTML = ''
+
+        // newEntry.forEach(movieShow => {
+            newEntryDiv.innerHTML += `<div class="card" style="width: 18rem;">
+                <img src="${image_url}" class="card-img-top" alt=" ">
+                <div class="card-body">
+                    <p class="card-text">${title}</p>
+                    <p class="card-text">${yearReleased}</p>
+                    <p class="card-text">genre: ${genre}</p>
+                    <p class="card-text">rating: ${rating} stars</p>
+                    
+                </div>
+            </div>`
+        // })
     })
 };
-
+{/* <p class="card-text">${StreamingService.name}</p> */}
 //event listener for cloudinary widget
 uploadWidgetButton.addEventListener('click', function(){
     console.log('clicked')
@@ -48,3 +66,6 @@ myWidget.open();
 
 
 document.querySelector('#newPostForm').addEventListener('submit', newEntryHandler);
+
+
+//aa backtrack til here
