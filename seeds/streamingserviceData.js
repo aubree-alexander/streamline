@@ -2,31 +2,79 @@ const { StreamingService } = require('../models');
 
 const streamingservicedata = [
   {
-    name: 'Netflix'
+    name: 'AMC+'
   },
   {
-    name: 'Hulu'
+    name: 'Apple TV+'
   },
   {
-    name: 'Apple TV',
-  },
-  {
-    name: 'Amazon Prime Video'
-  },
-  {
-    name: 'Disney+'
-  },
-  {
-    name: 'HBO Max'
+    name: 'BET+',
   },
   {
     name: 'Crunchyroll'
   },
   {
-    name: 'Peacock'
+    name: 'DIRECTV STREAM'
   },
   {
-    name: 'Funimation'
+    name: 'Discovery+'
+  },
+  {
+    name: 'Disney+'
+  },
+  {
+    name: 'ESPN+'
+  },
+  {
+    name: 'FandangoNOW'
+  },
+  {
+    name: 'HBO Max'
+  },
+  {
+    name: 'HIDIVE'
+  },
+  {
+    name: 'Hulu'
+  },
+  {
+    name: 'Netflix'
+  },
+  {
+    name: 'Noggin'
+  },
+  {
+    name: 'Paramount+'
+  },
+  {
+    name: 'Peacock TV'
+  },
+  {
+    name: 'Pluto TV'
+  },
+  {
+    name: 'Prime Video'
+  },
+  {
+    name: 'Showtime'
+  },
+  {
+    name: 'Shudder'
+  },
+  {
+    name: 'Sling TV'
+  },
+  {
+    name: 'Starz'
+  },
+  {
+    name: 'Sundance Now'
+  },
+  {
+    name: 'Tubi TV'
+  },
+  {
+    name: 'Vudu'
   }
 ];
 
