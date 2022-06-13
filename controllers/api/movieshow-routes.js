@@ -4,17 +4,14 @@ const withAuth = require('../../utils/auth');
 //import model querying from sequelize
 const { Op } = require("sequelize");
 
-//AA - need to put withAuth back in these once complete.
-
-// Raj advice===what you could try if you want to put withAuth back in is put it back in to the post route and then hit the login route first with a valid username and password in the JSON and then try hitting the post route
+//aa - withauth isn't working
 router.post('/add-entry', (req, res) => {
-  console.log('made it here 1')
     MovieShow.create({
       ...req.body,
       // user_id: req.session.user_id
     })
       .then(dbPostData => 
-        { console.log('made it here 2', dbPostData), res.json(dbPostData) } )
+        { res.json(dbPostData) } )
       .catch(err => {
         console.log(err);
         res.status(500).json(err);

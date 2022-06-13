@@ -1,12 +1,12 @@
 //responsible for rendering handebars templates.
-
 const router = require('express').Router();
 const { route } = require('express/lib/application');
 const { User, MovieShow, StreamingService } = require('../models/');
-console.log(StreamingService)
+const withAuth = require('../utils/auth')
+
+
 // get all movies or shows for homepage carousel
 router.get('/homepage', async (req, res) => {
-   
     // const movieShowData = await 
     MovieShow.findAll({
 
@@ -37,6 +37,7 @@ router.get('/search', (req, res) => {
   res.render('advancedSearch', {loggedIn: req.session.loggedIn});
 });
 
+//AA- tried adding withAuth here. works while logged out (redirects to login page) but not when user is logged in. makes me wonder if the logged in functionality is working.
 //send user to userEntry handlebars template when clicking nav button
 router.get('/add-entry', (req, res) => {
   res.render('userEntry',{loggedIn: req.session.loggedIn});
