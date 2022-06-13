@@ -34,8 +34,9 @@ const newEntryHandler = async function(event) {
         //aa - is this right?
         streamingservice_id: streamingservice_id,
         //aa - how to go about this / getting url from cloudinary?
-        image_url: 
-    })
+        image_url: ""
+    });
+
     // await fetch(`/api/post`, {
     //     method: 'POST',
     //     body: JSON.stringify({
