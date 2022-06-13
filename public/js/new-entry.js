@@ -1,16 +1,16 @@
-// const { MovieShow } = require("../../models/index");
- 
-const uploadUrlInput = document.querySelector('[name="upload_url"]')
+let uploadUrlInput;
 const uploadWidgetButton = document.getElementById("upload_widget")
+console.log(uploadUrlInput)
 
 //cloudinary widget
+
 const myWidget = cloudinary.createUploadWidget({
     cloudName: 'ddmkrf5bx123', 
     uploadPreset: 's4wgstbl'
 }, (error, result) => { 
     if (!error && result && result.event === "success") { 
         console.log('Done! Here is the image info: ', result.info); 
-        uploadUrlInput.value = result.info.secure_url
+        uploadUrlInput = result.info.secure_url
         uploadWidgetButton.style.display = 'none'
     }
 })
@@ -32,7 +32,7 @@ const newEntryHandler = async function(event) {
             streamingservice_id: streamingservice_id,
             rating: rating,
             yearReleased: yearReleased,
-            image_url: myWidget.result.info.secure_url,
+            image_url: uploadUrlInput,
             genre: genre
 
         }),
