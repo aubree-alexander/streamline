@@ -78,11 +78,17 @@ const streamingservicedata = [
   }
 ];
 
-const seedStreamingService = async () => {
-  const rawServices = await StreamingService.bulkCreate(streamingservicedata);
-  const services = rawServices.map((service) => service.get({ plain: true }));
-  return services;
-}
+// const seedStreamingService = async () => {
+//   const rawServices = await StreamingService.bulkCreate(streamingservicedata);
+//   const services = rawServices.map((service) => service.get({ plain: true }));
+//   return services;
+// }
+
+// module.exports = seedStreamingService;
+
+//new
+const seedStreamingService = () => StreamingService.bulkCreate(streamingservicedata);
+
 
 module.exports = seedStreamingService;
 
