@@ -1,9 +1,9 @@
 {{#each movieShows}}
-<div>
+<div id="searchCards">
     <img src="{{image_url}}">
-    <h5 class="card-title">{{title}}</h5>
-    <p>{{yearReleased}}</p>
-    <p>{{streamingservice_id}}</p>
+    <h5 class="card-title" id="searchResTitle">{{title}}</h5>
+    <p id="searchResYear">{{yearReleased}}</p>
+    <p id="searchResService">{{streamingservice_id}}</p>
 </div>
 {{/each}}
 
