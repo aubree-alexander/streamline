@@ -6,7 +6,7 @@ const withAuth = require('../utils/auth')
 
 
 // get all movies or shows for homepage carousel
-router.get('/homepage', async (req, res) => {
+router.get('/', async (req, res) => {
     // const movieShowData = await 
     MovieShow.findAll({
 
@@ -44,7 +44,7 @@ router.get('/add-entry', (req, res) => {
 });
 
 //send user to homepage when clicking cloudinary main text in nav bar or logo
-router.get('/homepage', (req, res) => {
+router.get('/', (req, res) => {
   res.render('homepage',{loggedIn: req.session.loggedIn});
 });
 
@@ -56,7 +56,7 @@ router.get('/homepage', (req, res) => {
 //send user to login page when they click nav bar item
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/homepage')
+    res.redirect('/')
     return;
   }
   res.render('loginPage', {loggedIn: req.session.loggedIn});
@@ -77,7 +77,7 @@ router.get('/login', (req, res) => {
 //LOGIN PAGE ROUTES
 router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/homepage');
+    res.redirect('/');
     return;
   }
   res.render('accountCreation',{loggedIn: req.session.loggedIn});

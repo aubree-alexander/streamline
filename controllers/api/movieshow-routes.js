@@ -19,7 +19,7 @@ router.post('/add-entry', (req, res) => {
   });
 
 // Get all posts
-router.get("/homepage", async (req, res) => {
+router.get("/", async (req, res) => {
   MovieShow.findAll({
       attributes: ["id", "title", "yearReleased", "image_url",],
       include: [{
