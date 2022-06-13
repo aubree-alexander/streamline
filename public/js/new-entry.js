@@ -1,5 +1,5 @@
 // const { MovieShow } = require("../../models/index");
-
+ 
 const uploadUrlInput = document.querySelector('[name="upload_url"]')
 const uploadWidgetButton = document.getElementById("upload_widget")
 
@@ -18,25 +18,13 @@ const myWidget = cloudinary.createUploadWidget({
 const newEntryHandler = async function(event) {
     event.preventDefault();
 
-    // const title = document.querySelector('input[name="post-title"]').value;
-    // const body = document.querySelector('textarea[name="post-body"]').value;
     const title = document.querySelector('#entryTitleForm').value
     const streamingservice_id = document.querySelector('#strServicesOpt').value
     const genre = document.querySelector('#movieGenres').value
     const rating = document.querySelector('#ratingSelect').value
     const yearReleased = parseInt($('#datepicker').val())
 
-    // const newMovieShow = await MovieShow.create({
-    //     title: title,
-    //     yearReleased: yearReleased,
-    //     genre: genre,
-    //     rating: rating,
-    //     //aa - is this right?
-    //     streamingservice_id: streamingservice_id,
-    //     //aa - how to go about this / getting url from cloudinary?
-    //     image_url: ""
-    // });
-    console.log(title, genre)
+    console.log(title, genre, uploadUrlInput)
     await fetch('/api/movieshows/add-entry', {
         method: 'POST',
         body: JSON.stringify({
@@ -44,12 +32,12 @@ const newEntryHandler = async function(event) {
             streamingservice_id: streamingservice_id,
             rating: rating,
             yearReleased: yearReleased,
-            // image_url,
+            image_url: myWidget.result.info.secure_url,
             genre: genre
+
         }),
         headers: { 'Content-Type': 'application/json' },
     })
-
 };
 
 //event listener for cloudinary widget
