@@ -62,7 +62,7 @@ router.post('/search', async (req, res) => {
     if (!!rating) {
       orArray.push({ rating })
     }
-    console.log(orArray)
+    // console.log(orArray)
     const results = await MovieShow.findAll({
       where: { [Op.or]: orArray },
       include: [

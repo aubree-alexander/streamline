@@ -1,4 +1,4 @@
-//AA - this isn't working...not giving an alert or redirecting to homepage. we're close though! 
+
 async function signupFormHandler(event) {
     event.preventDefault();
 

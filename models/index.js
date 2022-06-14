@@ -5,12 +5,8 @@ const MovieShow = require('./MovieShow');
 const StreamingService = require('./StreamingService');
 
 
-//AA - changeing from hasone to hasmany
-//AA - tried switching around sourcekey and foreignkey to no avail
 StreamingService.hasMany(MovieShow, {
     foreignKey: 'streamingservice_id'
-    // sourceKey: 'name',
-    // as: 'streamName'
 });
 
 
