@@ -1,6 +1,7 @@
 # streamline
 
-// insert picture here
+![image](https://user-images.githubusercontent.com/98507912/173479479-6a34df6d-0502-4541-9238-1fff24fe0cea.png)
+
 
 [Deployed Site](https://peaceful-earth-43575.herokuapp.com/)
 
