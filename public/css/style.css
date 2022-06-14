@@ -90,8 +90,13 @@ nav div ul li {
 }
 
 #carouselImg {
-    height: 450px;
+    height: auto;
     margin-top: 40px;
+    width: 50%;
+}
+
+#textContainer {
+    text-align: center;
 }
 
 /*forms*/
