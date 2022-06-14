@@ -1,6 +1,6 @@
 # streamline
 
-![image](https://user-images.githubusercontent.com/98507912/173479479-6a34df6d-0502-4541-9238-1fff24fe0cea.png)
+![streamline_screenshot](https://user-images.githubusercontent.com/99295420/173684710-f996e689-782c-4fb4-8005-49faa1751150.png)
 
 
 [Deployed Site](https://peaceful-earth-43575.herokuapp.com/)
